@@ -1,11 +1,11 @@
 
 # CoinSense Model Performance Report
-Generated on: 2025-09-29 01:08:06
+Generated on: 2025-09-29 01:21:50
 
 ## Executive Summary
-- Total Models Evaluated: 3
+- Total Models Evaluated: 4
 - LSTM Models Evaluated: 3
-- Evaluation Date: 2025-09-29T01:08:06.304635
+- Evaluation Date: 2025-09-29T01:21:50.124639
 
 ## LSTM Price Prediction Models
 
@@ -42,7 +42,7 @@ Generated on: 2025-09-29 01:08:06
 
 ## Sentiment Analysis Model
 - **Average Confidence**: 0.939
-- **Response Time**: 0.062s
+- **Response Time**: 0.051s
 - **Test Articles**: 3
 - **Sentiment Distribution**:
   - Positive: 66.7%
@@ -51,7 +51,11 @@ Generated on: 2025-09-29 01:08:06
 
 
 ## RAG Chatbot Model
-- **Status**: Error - 'CryptoRAGChatbot' object has no attribute 'load_index'
+- **Average Response Time**: 0.017s
+- **Average Confidence**: 0.587
+- **Test Queries**: 10
+- **Total Sources Used**: 30
+- **Supported Cryptocurrencies**: 10
 
 
 ## Recommendations

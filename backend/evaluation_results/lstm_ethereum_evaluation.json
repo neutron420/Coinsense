@@ -83,7 +83,7 @@
       228.95877075195312
     ],
     "prediction_confidence": 0.796378030857297,
-    "prediction_date": "2025-09-29T01:07:55.837920"
+    "prediction_date": "2025-09-29T01:21:41.286954"
   },
   "model_info": {
     "model_type": "LSTM",
@@ -95,5 +95,5 @@
     "trainable_parameters": 32301,
     "device": "cpu"
   },
-  "evaluation_date": "2025-09-29T01:07:55.839920"
+  "evaluation_date": "2025-09-29T01:21:41.287953"
 }

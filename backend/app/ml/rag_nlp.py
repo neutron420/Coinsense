@@ -23,20 +23,34 @@ class CryptoRAGChatbot:
         self.model_name = model_name
         self.model = SentenceTransformer(model_name)
         self.index = None
-        self.data = None
-        self.index_path = index_path
-        self.data_path = data_path
+        self.data = []  # Correctly initialized attribute
+        
+        # Define default paths for trained models using an absolute path from the current file
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        self.trained_models_dir = os.path.join(base_dir, '..', '..', 'trained_models')
+        self.index_path = index_path or os.path.join(self.trained_models_dir, 'rag_index.index')
+        self.data_path = data_path or os.path.join(self.trained_models_dir, 'rag_data.json')
 
-        # Load or create index
-        if index_path and os.path.exists(index_path):
-            self.load_index()
-        else:
-            # Build index from all datasets in the specified directory
-            # Go up from app/ml to backend, then up to project root, then to datasets
-            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-            dataset_dir = os.path.join(project_root, 'datasets', 'crypto_datasets')
-            dataset_dir = os.path.abspath(dataset_dir)
-            self.build_index_from_directory(dataset_dir)
+        # Automatically load the index when the object is created
+        self.load_index()
+
+    def load_index(self):
+        """Loads the FAISS index and RAG data from disk."""
+        try:
+            if os.path.exists(self.index_path) and os.path.exists(self.data_path):
+                self.index = faiss.read_index(self.index_path)
+                with open(self.data_path, 'r', encoding='utf-8') as f:
+                    self.data = json.load(f) # Assign to self.data
+                logger.info(f"Loaded index with {self.index.ntotal} vectors")
+                return True
+            else:
+                logger.warning("Index or data file not found, skipping load.")
+                return False
+        except Exception as e:
+            logger.error(f"Error loading FAISS index or data: {e}", exc_info=True)
+            self.index = None
+            self.data = []
+            return False
 
     def load_crypto_dataset(self, csv_path: str) -> pd.DataFrame:
         """Load cryptocurrency dataset"""
@@ -53,13 +67,8 @@ class CryptoRAGChatbot:
         if pd.isna(text):
             return ""
         
-        # Convert to string and clean
         text = str(text).strip()
-        
-        # Remove special characters but keep important ones
         text = re.sub(r'[^\w\s\.\,\!\?\-\$\%]', ' ', text)
-        
-        # Normalize whitespace
         text = re.sub(r'\s+', ' ', text)
         
         return text
@@ -70,7 +79,6 @@ class CryptoRAGChatbot:
         
         try:
             for _, row in df.iterrows():
-                # Create multiple knowledge entries per cryptocurrency
                 symbol = str(row.get('Symbol', '')).strip()
                 name = str(row.get('Name', '')).strip()
                 
@@ -82,11 +90,8 @@ class CryptoRAGChatbot:
                     'id': f"{symbol}_basic",
                     'text': f"{name} ({symbol}) is a cryptocurrency. Current price: ${row.get('Price (Intraday)', 'N/A')}. Market cap: {row.get('Market Cap', 'N/A')}. Volume: {row.get('Volume in Currency (24Hr)', 'N/A')}.",
                     'metadata': {
-                        'type': 'basic_info',
-                        'symbol': symbol,
-                        'name': name,
-                        'price': row.get('Price (Intraday)', ''),
-                        'market_cap': row.get('Market Cap', ''),
+                        'type': 'basic_info', 'symbol': symbol, 'name': name,
+                        'price': row.get('Price (Intraday)', ''), 'market_cap': row.get('Market Cap', ''),
                         'volume': row.get('Volume in Currency (24Hr)', '')
                     }
                 }
@@ -99,11 +104,8 @@ class CryptoRAGChatbot:
                         'id': f"{symbol}_change",
                         'text': f"{name} ({symbol}) has changed by {price_change} in the last 24 hours. The price change is {row.get('Change', 'N/A')}.",
                         'metadata': {
-                            'type': 'price_change',
-                            'symbol': symbol,
-                            'name': name,
-                            'change_percent': price_change,
-                            'change_amount': row.get('Change', '')
+                            'type': 'price_change', 'symbol': symbol, 'name': name,
+                            'change_percent': price_change, 'change_amount': row.get('Change', '')
                         }
                     }
                     knowledge_base.append(change_info)
@@ -114,12 +116,7 @@ class CryptoRAGChatbot:
                     cap_info = {
                         'id': f"{symbol}_market_cap",
                         'text': f"{name} ({symbol}) has a market capitalization of {market_cap}. This makes it one of the {self._get_market_cap_tier(market_cap)} cryptocurrencies.",
-                        'metadata': {
-                            'type': 'market_cap',
-                            'symbol': symbol,
-                            'name': name,
-                            'market_cap': market_cap
-                        }
+                        'metadata': {'type': 'market_cap', 'symbol': symbol, 'name': name, 'market_cap': market_cap}
                     }
                     knowledge_base.append(cap_info)
                 
@@ -129,12 +126,7 @@ class CryptoRAGChatbot:
                     volume_info = {
                         'id': f"{symbol}_volume",
                         'text': f"{name} ({symbol}) has a 24-hour trading volume of {volume}. This indicates {self._get_volume_analysis(volume)} trading activity.",
-                        'metadata': {
-                            'type': 'volume',
-                            'symbol': symbol,
-                            'name': name,
-                            'volume': volume
-                        }
+                        'metadata': {'type': 'volume', 'symbol': symbol, 'name': name, 'volume': volume}
                     }
                     knowledge_base.append(volume_info)
             
@@ -148,25 +140,13 @@ class CryptoRAGChatbot:
     def _get_market_cap_tier(self, market_cap: str) -> str:
         """Determine market cap tier"""
         try:
-            # Extract numeric value
             numeric_value = float(re.sub(r'[^\d\.]', '', market_cap))
-            
-            if 'T' in market_cap.upper():
-                if numeric_value > 100:
-                    return "largest"
-                elif numeric_value > 10:
-                    return "major"
-                else:
-                    return "significant"
-            elif 'B' in market_cap.upper():
-                if numeric_value > 50:
-                    return "major"
-                elif numeric_value > 10:
-                    return "significant"
-                else:
-                    return "moderate"
-            else:
-                return "smaller"
+            if 'T' in market_cap.upper(): return "largest"
+            if 'B' in market_cap.upper():
+                if numeric_value > 50: return "major"
+                if numeric_value > 10: return "significant"
+                return "moderate"
+            return "smaller"
         except:
             return "unknown"
     
@@ -174,23 +154,15 @@ class CryptoRAGChatbot:
         """Analyze trading volume"""
         try:
             numeric_value = float(re.sub(r'[^\d\.]', '', volume))
-            
             if 'B' in volume.upper():
-                if numeric_value > 5:
-                    return "very high"
-                elif numeric_value > 1:
-                    return "high"
-                else:
-                    return "moderate"
-            elif 'M' in volume.upper():
-                if numeric_value > 500:
-                    return "high"
-                elif numeric_value > 100:
-                    return "moderate"
-                else:
-                    return "low"
-            else:
-                return "very low"
+                if numeric_value > 5: return "very high"
+                if numeric_value > 1: return "high"
+                return "moderate"
+            if 'M' in volume.upper():
+                if numeric_value > 500: return "high"
+                if numeric_value > 100: return "moderate"
+                return "low"
+            return "very low"
         except:
             return "unknown"
             
@@ -203,8 +175,6 @@ class CryptoRAGChatbot:
 
             all_dfs = [self.load_crypto_dataset(csv_file) for csv_file in csv_files]
             df = pd.concat(all_dfs, ignore_index=True)
-
-            # Remove duplicate entries based on 'Symbol', keeping the last one
             df.drop_duplicates(subset=['Symbol'], keep='last', inplace=True)
 
             self.data = self.create_knowledge_base(df)
@@ -229,14 +199,11 @@ class CryptoRAGChatbot:
             if self.index is None or self.data is None:
                 raise ValueError("No index or data to save")
             
-            # Create directories
             os.makedirs(os.path.dirname(index_path), exist_ok=True)
             os.makedirs(os.path.dirname(data_path), exist_ok=True)
             
-            # Save FAISS index
             faiss.write_index(self.index, index_path)
             
-            # Save data
             with open(data_path, 'w', encoding='utf-8') as f:
                 json.dump(self.data, f, indent=2, ensure_ascii=False)
             
@@ -247,46 +214,20 @@ class CryptoRAGChatbot:
             logger.error(f"Error saving index: {e}")
             raise
 
-    # Replace the existing load_index function in app/ml/rag_nlp.py with this one
-def load_index(self):
-    """Loads the FAISS index and RAG data from disk."""
-    try:
-        if os.path.exists(self.index_path) and os.path.exists(self.data_path):
-            # --- THIS IS THE FIX ---
-            # Ensure the index and data are assigned to self.
-            self.index = faiss.read_index(self.index_path)
-            with open(self.data_path, 'r') as f:
-                self.rag_data = json.load(f)
-            # ---------------------
-
-            logger.info(f"Loaded index with {self.index.ntotal} vectors")
-            return True
-        else:
-            logger.warning("Index or data file not found, skipping load.")
-            return False
-    except Exception as e:
-        logger.error(f"Error loading FAISS index or data: {e}", exc_info=True)
-        self.index = None
-        self.rag_data = []
-        return False
-
     def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """Search for relevant information"""
         try:
-            if self.index is None or self.data is None:
+            if self.index is None or not self.data:
                 raise ValueError("Index not loaded")
             
-            # Encode query
             query_embedding = self.model.encode([query])
             faiss.normalize_L2(query_embedding)
             
-            # Search
             scores, indices = self.index.search(query_embedding.astype('float32'), top_k)
             
-            # Format results
             results = []
             for score, idx in zip(scores[0], indices[0]):
-                if idx < len(self.data):
+                if 0 <= idx < len(self.data):
                     result = self.data[idx].copy()
                     result['similarity_score'] = float(score)
                     results.append(result)
@@ -294,13 +235,12 @@ def load_index(self):
             return results
         
         except Exception as e:
-            logger.error(f"Search error: {e}")
-            raise
+            logger.error(f"Search error: {e}", exc_info=True)
+            return []
 
     def generate_response(self, query: str, context_limit: int = 3) -> Dict:
         """Generate response using RAG"""
         try:
-            # Search for relevant context
             search_results = self.search(query, top_k=context_limit)
             
             if not search_results:
@@ -310,23 +250,11 @@ def load_index(self):
                     'sources': []
                 }
             
-            # Extract context
-            context = []
-            sources = []
-            total_confidence = 0
+            context = [result['text'] for result in search_results]
+            sources = search_results
+            avg_confidence = sum(r['similarity_score'] for r in search_results) / len(search_results)
             
-            for result in search_results:
-                context.append(result['text'])
-                sources.append({
-                    'text': result['text'],
-                    'similarity_score': result['similarity_score'],
-                    'metadata': result.get('metadata', {})
-                })
-                total_confidence += result['similarity_score']
-            
-            # Generate response
             response = self._generate_contextual_response(query, context)
-            avg_confidence = total_confidence / len(search_results)
             
             return {
                 'response': response,
@@ -336,7 +264,7 @@ def load_index(self):
             }
         
         except Exception as e:
-            logger.error(f"Response generation error: {e}")
+            logger.error(f"Response generation error: {e}", exc_info=True)
             return {
                 'response': "I'm sorry, I encountered an error while processing your request. Please try again.",
                 'confidence': 0.0,
@@ -347,47 +275,32 @@ def load_index(self):
         """Generate contextual response based on query and context"""
         query_lower = query.lower()
         
-        # Price-related queries
         if any(word in query_lower for word in ['price', 'cost', 'value', 'worth', 'expensive', 'cheap']):
             return self._generate_price_response(query, context)
         
-        # Market cap queries
         elif any(word in query_lower for word in ['market cap', 'market capitalization', 'size', 'biggest', 'largest']):
             return self._generate_market_cap_response(query, context)
         
-        # Volume queries
         elif any(word in query_lower for word in ['volume', 'trading', 'activity', 'popular']):
             return self._generate_volume_response(query, context)
         
-        # Change/performance queries
         elif any(word in query_lower for word in ['change', 'up', 'down', 'increase', 'decrease', 'performance']):
             return self._generate_change_response(query, context)
         
-        # General information
         else:
             return self._generate_general_response(query, context)
 
     def _generate_price_response(self, query: str, context: List[str]) -> str:
         """Generate response for price-related queries"""
-        response_parts = []
-        
-        for ctx in context:
-            if 'price' in ctx.lower():
-                response_parts.append(ctx)
-        
+        response_parts = [ctx for ctx in context if 'price' in ctx.lower()]
         if response_parts:
-            return " ".join(response_parts[:2])  # Limit to 2 most relevant contexts
+            return " ".join(response_parts[:2])
         else:
             return "I don't have current price information for that cryptocurrency. Please check a reliable cryptocurrency exchange for the most up-to-date prices."
 
     def _generate_market_cap_response(self, query: str, context: List[str]) -> str:
         """Generate response for market cap queries"""
-        response_parts = []
-        
-        for ctx in context:
-            if 'market cap' in ctx.lower() or 'market capitalization' in ctx.lower():
-                response_parts.append(ctx)
-        
+        response_parts = [ctx for ctx in context if 'market cap' in ctx.lower() or 'market capitalization' in ctx.lower()]
         if response_parts:
             return " ".join(response_parts[:2])
         else:
@@ -395,12 +308,7 @@ def load_index(self):
 
     def _generate_volume_response(self, query: str, context: List[str]) -> str:
         """Generate response for volume queries"""
-        response_parts = []
-        
-        for ctx in context:
-            if 'volume' in ctx.lower() or 'trading' in ctx.lower():
-                response_parts.append(ctx)
-        
+        response_parts = [ctx for ctx in context if 'volume' in ctx.lower() or 'trading' in ctx.lower()]
         if response_parts:
             return " ".join(response_parts[:2])
         else:
@@ -408,12 +316,7 @@ def load_index(self):
 
     def _generate_change_response(self, query: str, context: List[str]) -> str:
         """Generate response for price change queries"""
-        response_parts = []
-        
-        for ctx in context:
-            if 'change' in ctx.lower() or '%' in ctx:
-                response_parts.append(ctx)
-        
+        response_parts = [ctx for ctx in context if 'change' in ctx.lower() or '%' in ctx]
         if response_parts:
             return " ".join(response_parts[:2])
         else:

@@ -6,7 +6,7 @@
     "negative_predictions": 1,
     "neutral_predictions": 0,
     "average_confidence": 0.939459502696991,
-    "response_time_seconds": 0.062005
+    "response_time_seconds": 0.050538
   },
   "sentiment_distribution": {
     "positive_percentage": 66.66666666666666,
@@ -40,5 +40,5 @@
     "supports_batch": true,
     "model_type": "FinBERT"
   },
-  "evaluation_date": "2025-09-29T01:07:59.505999"
+  "evaluation_date": "2025-09-29T01:21:44.595235"
 }

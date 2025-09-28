@@ -1,0 +1,105 @@
+{
+  "model_type": "RAG Chatbot",
+  "test_queries": 10,
+  "metrics": {
+    "average_response_time": 0.0169506,
+    "average_confidence": 0.5866888165473938,
+    "total_sources_used": 30
+  },
+  "query_results": [
+    {
+      "query": "What is Bitcoin?",
+      "response": "Based on the available information: Bitcoin USD (BTC-USD) is a cryptocurrency. Current price: $27,921.96. Market cap: 540.056B. Volume: 10.068B.",
+      "confidence": 0.5285531679789225,
+      "response_time": 0.039088,
+      "sources_count": 3
+    },
+    {
+      "query": "What is the current price of Ethereum?",
+      "response": "Ethereum USD (ETH-USD) is a cryptocurrency. Current price: $1,838.81. Market cap: 221.499B. Volume: 5.859B. Electroneum USD (ETN-USD) is a cryptocurrency. Current price: $0.002351. Market cap: 42.189M. Volume: 16,796.",
+      "confidence": 0.7041610876719157,
+      "response_time": 0.012996,
+      "sources_count": 3
+    },
+    {
+      "query": "Which cryptocurrency has the highest market cap?",
+      "response": "Ethereum USD (ETH-USD) has a market capitalization of 221.499B. This makes it one of the major cryptocurrencies. Bitcoin USD (BTC-USD) has a market capitalization of 540.056B. This makes it one of the major cryptocurrencies.",
+      "confidence": 0.6995080908139547,
+      "response_time": 0.015016,
+      "sources_count": 3
+    },
+    {
+      "query": "Tell me about Dogecoin",
+      "response": "Based on the available information: Dogecoin USD (DOGE-USD) has a market capitalization of 11.582B. This makes it one of the significant cryptocurrencies.",
+      "confidence": 0.7066709200541178,
+      "response_time": 0.014308,
+      "sources_count": 3
+    },
+    {
+      "query": "What are the top performing cryptocurrencies?",
+      "response": "Based on the available information: Bitcoin USD (BTC-USD) has a market capitalization of 540.056B. This makes it one of the major cryptocurrencies.",
+      "confidence": 0.5799595713615417,
+      "response_time": 0.018612,
+      "sources_count": 3
+    },
+    {
+      "query": "Explain cryptocurrency trading volume",
+      "response": "CRYPTO20 USD (C20-USD) has a 24-hour trading volume of 17. This indicates very low trading activity. CryptoTanks USD (TANK-USD) has a 24-hour trading volume of 116,884. This indicates very low trading activity.",
+      "confidence": 0.5934566458066305,
+      "response_time": 0.014727,
+      "sources_count": 3
+    },
+    {
+      "query": "What is market capitalization?",
+      "response": "MMOCoin USD (MMO-USD) has a market capitalization of 65,120. This makes it one of the smaller cryptocurrencies. Privatix USD (PRIX-USD) has a market capitalization of 51,829. This makes it one of the smaller cryptocurrencies.",
+      "confidence": 0.5504437287648519,
+      "response_time": 0.015357,
+      "sources_count": 3
+    },
+    {
+      "query": "How does cryptocurrency work?",
+      "response": "Based on the available information: EncrypGen USD (DNA-USD) has a market capitalization of 0. This makes it one of the smaller cryptocurrencies.",
+      "confidence": 0.473775714635849,
+      "response_time": 0.013995,
+      "sources_count": 3
+    },
+    {
+      "query": "What is the difference between Bitcoin and Ethereum?",
+      "response": "Based on the available information: Bitcoin USD (BTC-USD) is a cryptocurrency. Current price: $27,921.96. Market cap: 540.056B. Volume: 10.068B.",
+      "confidence": 0.4236815671126048,
+      "response_time": 0.013707,
+      "sources_count": 3
+    },
+    {
+      "query": "Which crypto has the most trading activity?",
+      "response": "Crypton USD (CRP-USD) has a 24-hour trading volume of 252,669. This indicates very low trading activity. CRYPTO20 USD (C20-USD) has a 24-hour trading volume of 17. This indicates very low trading activity.",
+      "confidence": 0.6066776712735494,
+      "response_time": 0.0117,
+      "sources_count": 3
+    }
+  ],
+  "search_test": {
+    "query": "Bitcoin price",
+    "results_count": 5,
+    "top_result_similarity": 0.7730095386505127
+  },
+  "model_info": {
+    "model_name": "all-MiniLM-L6-v2",
+    "index_size": 12404,
+    "data_size": 12404,
+    "supported_cryptocurrencies": 3101
+  },
+  "supported_cryptocurrencies": [
+    "0XBTC-USD",
+    "1ART-USD",
+    "1EARTH-USD",
+    "1INCH-USD",
+    "1MIL-USD",
+    "1UP-USD",
+    "1WO-USD",
+    "2CRZ-USD",
+    "2KEY-USD",
+    "2LC-USD"
+  ],
+  "evaluation_date": "2025-09-29T01:21:50.116275"
+}
