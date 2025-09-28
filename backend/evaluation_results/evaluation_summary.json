@@ -1,0 +1,63 @@
+{
+  "lstm_evaluations": {
+    "Bitcoin": {
+      "error": "Model files not found for Bitcoin"
+    },
+    "Ethereum": {
+      "error": "Model files not found for Ethereum"
+    }
+  },
+  "sentiment_evaluation": {
+    "model_type": "Sentiment Analysis",
+    "test_articles": 3,
+    "metrics": {
+      "positive_predictions": 2,
+      "negative_predictions": 1,
+      "neutral_predictions": 0,
+      "average_confidence": 0.939459502696991,
+      "response_time_seconds": 0.042978
+    },
+    "sentiment_distribution": {
+      "positive_percentage": 66.66666666666666,
+      "negative_percentage": 33.33333333333333,
+      "neutral_percentage": 0.0
+    },
+    "sample_results": [
+      {
+        "text": "Bitcoin Reaches New All-Time High Amid Institutional Adoption Major corporations continue to invest ...",
+        "label": "positive",
+        "confidence": 0.9078581929206848,
+        "source": "CryptoNews"
+      },
+      {
+        "text": "Ethereum Network Upgrade Shows Promising Results The latest Ethereum network upgrade has improved tr...",
+        "label": "positive",
+        "confidence": 0.9602413773536682,
+        "source": "EthereumNews"
+      },
+      {
+        "text": "Regulatory Concerns Impact Altcoin Markets Recent regulatory announcements have caused uncertainty i...",
+        "label": "negative",
+        "confidence": 0.9502789378166199,
+        "source": "RegulatoryNews"
+      }
+    ],
+    "model_info": {
+      "model_name": "ProsusAI/finbert",
+      "device": "cpu",
+      "max_length": 512,
+      "supports_batch": true,
+      "model_type": "FinBERT"
+    },
+    "evaluation_date": "2025-09-29T00:21:47.975426"
+  },
+  "rag_evaluation": {
+    "error": "RAG index not found. Please train the RAG model first."
+  },
+  "evaluation_summary": {
+    "total_models_evaluated": 3,
+    "lstm_models_evaluated": 0,
+    "evaluation_completed": "2025-09-29T00:21:47.981789",
+    "results_directory": "C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\evaluation_results"
+  }
+}

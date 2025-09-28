@@ -32,7 +32,10 @@ class CryptoRAGChatbot:
             self.load_index()
         else:
             # Build index from all datasets in the specified directory
-            dataset_dir = os.path.join(os.path.dirname(__file__), '..', 'datasets', 'crypto_datasets')
+            # Go up from app/ml to backend, then up to project root, then to datasets
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+            dataset_dir = os.path.join(project_root, 'datasets', 'crypto_datasets')
+            dataset_dir = os.path.abspath(dataset_dir)
             self.build_index_from_directory(dataset_dir)
 
     def load_crypto_dataset(self, csv_path: str) -> pd.DataFrame:

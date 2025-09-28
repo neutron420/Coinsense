@@ -1,0 +1,34 @@
+# Additional dependencies for model training and evaluation
+# Install these alongside your existing requirements.txt
+
+# Core ML libraries
+torch>=1.9.0
+torchvision>=0.10.0
+torchaudio>=0.9.0
+
+# Transformers and NLP
+transformers>=4.20.0
+sentence-transformers>=2.2.0
+tokenizers>=0.12.0
+
+# Vector search and embeddings
+faiss-cpu>=1.7.0
+# faiss-gpu>=1.7.0  # Uncomment for GPU support
+
+# Data processing and ML
+scikit-learn>=1.0.0
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Utilities
+joblib>=1.1.0
+requests>=2.25.0
+tqdm>=4.62.0
+
+# Optional: For better performance
+# accelerate>=0.20.0  # For faster training
+# datasets>=2.0.0    # For dataset management

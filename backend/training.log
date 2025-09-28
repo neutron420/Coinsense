@@ -1,0 +1,898 @@
+2025-09-29 00:16:22,766 - __main__ - INFO - Starting quick training for all models...
+2025-09-29 00:16:22,767 - train_models - INFO - Starting comprehensive model training
+2025-09-29 00:16:22,767 - train_models - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:16:22,769 - train_models - ERROR - Coins dataset directory not found: C:\Users\R.K Singh\Desktop\coinsense\backend\datasets\coins_datasets
+2025-09-29 00:16:22,769 - train_models - ERROR - No cryptocurrency datasets found
+2025-09-29 00:16:22,769 - train_models - INFO - Initializing sentiment analysis model
+2025-09-29 00:16:22,769 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:16:29,632 - huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-09-29 00:17:15,723 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:17:15,979 - train_models - INFO - Sentiment analysis model initialized successfully
+2025-09-29 00:17:15,986 - train_models - INFO - Initializing RAG chatbot model
+2025-09-29 00:17:15,991 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:17:15,991 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:17:17,524 - huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-09-29 00:17:22,278 - ml.rag_nlp - ERROR - Error building index from directory: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:17:22,278 - train_models - ERROR - RAG model initialization failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:17:22,280 - train_models - ERROR - RAG model training failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:17:22,282 - train_models - INFO - All model training completed
+2025-09-29 00:17:22,282 - train_models - INFO - Training results saved to: C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\training_results.json
+2025-09-29 00:17:22,282 - __main__ - INFO - Quick training completed!
+2025-09-29 00:21:02,135 - __main__ - INFO - Starting quick training for all models...
+2025-09-29 00:21:02,136 - train_models - INFO - Starting comprehensive model training
+2025-09-29 00:21:02,136 - train_models - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:21:02,136 - train_models - ERROR - Coins dataset directory not found: C:\Users\R.K Singh\Desktop\coinsense\backend\datasets\coins_datasets
+2025-09-29 00:21:02,137 - train_models - ERROR - No cryptocurrency datasets found
+2025-09-29 00:21:02,137 - train_models - INFO - Initializing sentiment analysis model
+2025-09-29 00:21:02,137 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:21:12,188 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:21:12,521 - train_models - INFO - Sentiment analysis model initialized successfully
+2025-09-29 00:21:12,527 - train_models - INFO - Initializing RAG chatbot model
+2025-09-29 00:21:12,532 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:21:12,533 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:21:18,722 - ml.rag_nlp - ERROR - Error building index from directory: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:21:18,723 - train_models - ERROR - RAG model initialization failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:21:18,723 - train_models - ERROR - RAG model training failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:21:18,725 - train_models - INFO - All model training completed
+2025-09-29 00:21:18,726 - train_models - INFO - Training results saved to: C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\training_results.json
+2025-09-29 00:21:18,726 - __main__ - INFO - Quick training completed!
+2025-09-29 00:21:44,423 - __main__ - INFO - Starting quick evaluation...
+2025-09-29 00:21:44,424 - evaluate_models - INFO - Starting comprehensive model evaluation
+2025-09-29 00:21:44,424 - evaluate_models - INFO - Evaluating LSTM model for Bitcoin
+2025-09-29 00:21:44,424 - evaluate_models - ERROR - LSTM evaluation failed for Bitcoin: Model files not found for Bitcoin
+2025-09-29 00:21:44,424 - evaluate_models - ERROR - LSTM evaluation failed for Bitcoin: Model files not found for Bitcoin
+2025-09-29 00:21:44,424 - evaluate_models - INFO - Evaluating LSTM model for Ethereum
+2025-09-29 00:21:44,424 - evaluate_models - ERROR - LSTM evaluation failed for Ethereum: Model files not found for Ethereum
+2025-09-29 00:21:44,426 - evaluate_models - ERROR - LSTM evaluation failed for Ethereum: Model files not found for Ethereum
+2025-09-29 00:21:44,426 - evaluate_models - INFO - Evaluating sentiment analysis model
+2025-09-29 00:21:44,426 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:21:47,712 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:21:47,976 - evaluate_models - INFO - Evaluation results saved to: C:\Users\R.K Singh\Desktop\coinsense\backend\evaluation_results\sentiment_evaluation.json
+2025-09-29 00:21:47,977 - evaluate_models - INFO - Sentiment analysis evaluation completed
+2025-09-29 00:21:47,977 - evaluate_models - INFO - Average confidence: 0.939, Response time: 0.043s
+2025-09-29 00:21:47,981 - evaluate_models - INFO - Evaluating RAG chatbot model
+2025-09-29 00:21:47,981 - evaluate_models - ERROR - RAG evaluation failed: RAG index not found. Please train the RAG model first.
+2025-09-29 00:21:47,981 - evaluate_models - ERROR - RAG evaluation failed: RAG index not found. Please train the RAG model first.
+2025-09-29 00:21:47,983 - evaluate_models - INFO - All model evaluations completed
+2025-09-29 00:21:47,983 - evaluate_models - INFO - Evaluation results saved to: C:\Users\R.K Singh\Desktop\coinsense\backend\evaluation_results\evaluation_summary.json
+2025-09-29 00:21:47,984 - __main__ - INFO - Quick evaluation completed!
+2025-09-29 00:22:06,167 - __main__ - INFO - Starting comprehensive model training
+2025-09-29 00:22:06,168 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:22:06,168 - __main__ - ERROR - Coins dataset directory not found: C:\Users\R.K Singh\Desktop\coinsense\backend\datasets\coins_datasets
+2025-09-29 00:22:06,168 - __main__ - ERROR - No cryptocurrency datasets found
+2025-09-29 00:22:06,168 - __main__ - INFO - Initializing sentiment analysis model
+2025-09-29 00:22:06,168 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:22:08,795 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:22:09,038 - __main__ - INFO - Sentiment analysis model initialized successfully
+2025-09-29 00:22:09,042 - __main__ - INFO - Initializing RAG chatbot model
+2025-09-29 00:22:09,045 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:22:09,045 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:22:14,313 - ml.rag_nlp - ERROR - Error building index from directory: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:22:14,313 - __main__ - ERROR - RAG model initialization failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:22:14,313 - __main__ - ERROR - RAG model training failed: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\crypto_datasets'
+2025-09-29 00:22:14,315 - __main__ - INFO - All model training completed
+2025-09-29 00:22:14,315 - __main__ - INFO - Training results saved to: C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\training_results.json
+2025-09-29 00:23:41,050 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:23:41,051 - __main__ - INFO - Starting LSTM training for Aave
+2025-09-29 00:23:41,051 - ml.lstm_model - ERROR - Data loading error for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,051 - __main__ - ERROR - LSTM training failed for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,052 - __main__ - ERROR - Failed to train LSTM for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,052 - __main__ - INFO - Starting LSTM training for BinanceCoin
+2025-09-29 00:23:41,052 - ml.lstm_model - ERROR - Data loading error for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,052 - __main__ - ERROR - LSTM training failed for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,053 - __main__ - ERROR - Failed to train LSTM for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,053 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:23:41,053 - ml.lstm_model - ERROR - Data loading error for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,053 - __main__ - ERROR - LSTM training failed for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,054 - __main__ - ERROR - Failed to train LSTM for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,054 - __main__ - INFO - Starting LSTM training for Cardano
+2025-09-29 00:23:41,054 - ml.lstm_model - ERROR - Data loading error for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,054 - __main__ - ERROR - LSTM training failed for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,054 - __main__ - ERROR - Failed to train LSTM for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,055 - __main__ - INFO - Starting LSTM training for ChainLink
+2025-09-29 00:23:41,055 - ml.lstm_model - ERROR - Data loading error for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,055 - __main__ - ERROR - LSTM training failed for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,056 - __main__ - ERROR - Failed to train LSTM for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,056 - __main__ - INFO - Starting LSTM training for Cosmos
+2025-09-29 00:23:41,056 - ml.lstm_model - ERROR - Data loading error for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,056 - __main__ - ERROR - LSTM training failed for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,056 - __main__ - ERROR - Failed to train LSTM for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,057 - __main__ - INFO - Starting LSTM training for CryptocomCoin
+2025-09-29 00:23:41,057 - ml.lstm_model - ERROR - Data loading error for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,057 - __main__ - ERROR - LSTM training failed for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,057 - __main__ - ERROR - Failed to train LSTM for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,058 - __main__ - INFO - Starting LSTM training for Dogecoin
+2025-09-29 00:23:41,058 - ml.lstm_model - ERROR - Data loading error for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,058 - __main__ - ERROR - LSTM training failed for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,058 - __main__ - ERROR - Failed to train LSTM for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,059 - __main__ - INFO - Starting LSTM training for EOS
+2025-09-29 00:23:41,059 - ml.lstm_model - ERROR - Data loading error for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,059 - __main__ - ERROR - LSTM training failed for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,059 - __main__ - ERROR - Failed to train LSTM for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,059 - __main__ - INFO - Starting LSTM training for Ethereum
+2025-09-29 00:23:41,060 - ml.lstm_model - ERROR - Data loading error for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,060 - __main__ - ERROR - LSTM training failed for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,060 - __main__ - ERROR - Failed to train LSTM for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,060 - __main__ - INFO - Starting LSTM training for Iota
+2025-09-29 00:23:41,061 - ml.lstm_model - ERROR - Data loading error for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,061 - __main__ - ERROR - LSTM training failed for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,061 - __main__ - ERROR - Failed to train LSTM for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,061 - __main__ - INFO - Starting LSTM training for Litecoin
+2025-09-29 00:23:41,062 - ml.lstm_model - ERROR - Data loading error for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,062 - __main__ - ERROR - LSTM training failed for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,062 - __main__ - ERROR - Failed to train LSTM for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,062 - __main__ - INFO - Starting LSTM training for Monero
+2025-09-29 00:23:41,062 - ml.lstm_model - ERROR - Data loading error for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,063 - __main__ - ERROR - LSTM training failed for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,063 - __main__ - ERROR - Failed to train LSTM for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,063 - __main__ - INFO - Starting LSTM training for NEM
+2025-09-29 00:23:41,063 - ml.lstm_model - ERROR - Data loading error for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,063 - __main__ - ERROR - LSTM training failed for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,064 - __main__ - ERROR - Failed to train LSTM for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,064 - __main__ - INFO - Starting LSTM training for Polkadot
+2025-09-29 00:23:41,064 - ml.lstm_model - ERROR - Data loading error for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,064 - __main__ - ERROR - LSTM training failed for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,064 - __main__ - ERROR - Failed to train LSTM for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,065 - __main__ - INFO - Starting LSTM training for Solana
+2025-09-29 00:23:41,065 - ml.lstm_model - ERROR - Data loading error for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,065 - __main__ - ERROR - LSTM training failed for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,065 - __main__ - ERROR - Failed to train LSTM for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,066 - __main__ - INFO - Starting LSTM training for Stellar
+2025-09-29 00:23:41,066 - ml.lstm_model - ERROR - Data loading error for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,066 - __main__ - ERROR - LSTM training failed for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,066 - __main__ - ERROR - Failed to train LSTM for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,066 - __main__ - INFO - Starting LSTM training for Tether
+2025-09-29 00:23:41,067 - ml.lstm_model - ERROR - Data loading error for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,067 - __main__ - ERROR - LSTM training failed for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,067 - __main__ - ERROR - Failed to train LSTM for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,067 - __main__ - INFO - Starting LSTM training for Tron
+2025-09-29 00:23:41,068 - ml.lstm_model - ERROR - Data loading error for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,068 - __main__ - ERROR - LSTM training failed for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,068 - __main__ - ERROR - Failed to train LSTM for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,068 - __main__ - INFO - Starting LSTM training for USDCoin
+2025-09-29 00:23:41,068 - ml.lstm_model - ERROR - Data loading error for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,069 - __main__ - ERROR - LSTM training failed for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,069 - __main__ - ERROR - Failed to train LSTM for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,069 - __main__ - INFO - Starting LSTM training for Uniswap
+2025-09-29 00:23:41,069 - ml.lstm_model - ERROR - Data loading error for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,069 - __main__ - ERROR - LSTM training failed for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,070 - __main__ - ERROR - Failed to train LSTM for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,070 - __main__ - INFO - Starting LSTM training for WrappedBitcoin
+2025-09-29 00:23:41,070 - ml.lstm_model - ERROR - Data loading error for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,070 - __main__ - ERROR - LSTM training failed for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,071 - __main__ - ERROR - Failed to train LSTM for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,074 - __main__ - INFO - Starting LSTM training for XRP
+2025-09-29 00:23:41,081 - ml.lstm_model - ERROR - Data loading error for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,082 - __main__ - ERROR - LSTM training failed for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,082 - __main__ - ERROR - Failed to train LSTM for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:23:41,083 - __main__ - INFO - LSTM training completed: 0/23 successful
+2025-09-29 00:24:26,808 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:24:26,808 - __main__ - INFO - Starting LSTM training for Aave
+2025-09-29 00:24:26,808 - ml.lstm_model - ERROR - Data loading error for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,808 - __main__ - ERROR - LSTM training failed for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,808 - __main__ - ERROR - Failed to train LSTM for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,808 - __main__ - INFO - Starting LSTM training for BinanceCoin
+2025-09-29 00:24:26,809 - ml.lstm_model - ERROR - Data loading error for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,809 - __main__ - ERROR - LSTM training failed for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,809 - __main__ - ERROR - Failed to train LSTM for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,809 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:24:26,809 - ml.lstm_model - ERROR - Data loading error for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,809 - __main__ - ERROR - LSTM training failed for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,810 - __main__ - ERROR - Failed to train LSTM for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,810 - __main__ - INFO - Starting LSTM training for Cardano
+2025-09-29 00:24:26,810 - ml.lstm_model - ERROR - Data loading error for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,810 - __main__ - ERROR - LSTM training failed for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,810 - __main__ - ERROR - Failed to train LSTM for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,810 - __main__ - INFO - Starting LSTM training for ChainLink
+2025-09-29 00:24:26,811 - ml.lstm_model - ERROR - Data loading error for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,811 - __main__ - ERROR - LSTM training failed for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,811 - __main__ - ERROR - Failed to train LSTM for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,811 - __main__ - INFO - Starting LSTM training for Cosmos
+2025-09-29 00:24:26,811 - ml.lstm_model - ERROR - Data loading error for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,813 - __main__ - ERROR - LSTM training failed for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,813 - __main__ - ERROR - Failed to train LSTM for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,813 - __main__ - INFO - Starting LSTM training for CryptocomCoin
+2025-09-29 00:24:26,813 - ml.lstm_model - ERROR - Data loading error for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,813 - __main__ - ERROR - LSTM training failed for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,813 - __main__ - ERROR - Failed to train LSTM for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,814 - __main__ - INFO - Starting LSTM training for Dogecoin
+2025-09-29 00:24:26,814 - ml.lstm_model - ERROR - Data loading error for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,814 - __main__ - ERROR - LSTM training failed for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,814 - __main__ - ERROR - Failed to train LSTM for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,814 - __main__ - INFO - Starting LSTM training for EOS
+2025-09-29 00:24:26,814 - ml.lstm_model - ERROR - Data loading error for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,814 - __main__ - ERROR - LSTM training failed for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,815 - __main__ - ERROR - Failed to train LSTM for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,815 - __main__ - INFO - Starting LSTM training for Ethereum
+2025-09-29 00:24:26,815 - ml.lstm_model - ERROR - Data loading error for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,815 - __main__ - ERROR - LSTM training failed for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,815 - __main__ - ERROR - Failed to train LSTM for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,816 - __main__ - INFO - Starting LSTM training for Iota
+2025-09-29 00:24:26,816 - ml.lstm_model - ERROR - Data loading error for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,816 - __main__ - ERROR - LSTM training failed for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,816 - __main__ - ERROR - Failed to train LSTM for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,816 - __main__ - INFO - Starting LSTM training for Litecoin
+2025-09-29 00:24:26,816 - ml.lstm_model - ERROR - Data loading error for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,816 - __main__ - ERROR - LSTM training failed for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,818 - __main__ - ERROR - Failed to train LSTM for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,818 - __main__ - INFO - Starting LSTM training for Monero
+2025-09-29 00:24:26,818 - ml.lstm_model - ERROR - Data loading error for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,818 - __main__ - ERROR - LSTM training failed for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,818 - __main__ - ERROR - Failed to train LSTM for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,818 - __main__ - INFO - Starting LSTM training for NEM
+2025-09-29 00:24:26,819 - ml.lstm_model - ERROR - Data loading error for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,819 - __main__ - ERROR - LSTM training failed for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,819 - __main__ - ERROR - Failed to train LSTM for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,819 - __main__ - INFO - Starting LSTM training for Polkadot
+2025-09-29 00:24:26,820 - ml.lstm_model - ERROR - Data loading error for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,820 - __main__ - ERROR - LSTM training failed for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,820 - __main__ - ERROR - Failed to train LSTM for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,820 - __main__ - INFO - Starting LSTM training for Solana
+2025-09-29 00:24:26,820 - ml.lstm_model - ERROR - Data loading error for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,820 - __main__ - ERROR - LSTM training failed for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,821 - __main__ - ERROR - Failed to train LSTM for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,821 - __main__ - INFO - Starting LSTM training for Stellar
+2025-09-29 00:24:26,821 - ml.lstm_model - ERROR - Data loading error for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,821 - __main__ - ERROR - LSTM training failed for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,821 - __main__ - ERROR - Failed to train LSTM for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,821 - __main__ - INFO - Starting LSTM training for Tether
+2025-09-29 00:24:26,822 - ml.lstm_model - ERROR - Data loading error for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,822 - __main__ - ERROR - LSTM training failed for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,822 - __main__ - ERROR - Failed to train LSTM for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,822 - __main__ - INFO - Starting LSTM training for Tron
+2025-09-29 00:24:26,822 - ml.lstm_model - ERROR - Data loading error for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,823 - __main__ - ERROR - LSTM training failed for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,823 - __main__ - ERROR - Failed to train LSTM for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,823 - __main__ - INFO - Starting LSTM training for USDCoin
+2025-09-29 00:24:26,823 - ml.lstm_model - ERROR - Data loading error for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,823 - __main__ - ERROR - LSTM training failed for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,823 - __main__ - ERROR - Failed to train LSTM for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,824 - __main__ - INFO - Starting LSTM training for Uniswap
+2025-09-29 00:24:26,824 - ml.lstm_model - ERROR - Data loading error for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,824 - __main__ - ERROR - LSTM training failed for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,824 - __main__ - ERROR - Failed to train LSTM for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,825 - __main__ - INFO - Starting LSTM training for WrappedBitcoin
+2025-09-29 00:24:26,825 - ml.lstm_model - ERROR - Data loading error for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,825 - __main__ - ERROR - LSTM training failed for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,825 - __main__ - ERROR - Failed to train LSTM for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,825 - __main__ - INFO - Starting LSTM training for XRP
+2025-09-29 00:24:26,826 - ml.lstm_model - ERROR - Data loading error for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,826 - __main__ - ERROR - LSTM training failed for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,826 - __main__ - ERROR - Failed to train LSTM for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\app\\ml\\..\\datasets\\coins_datasets'
+2025-09-29 00:24:26,826 - __main__ - INFO - LSTM training completed: 0/23 successful
+2025-09-29 00:25:53,195 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:25:53,196 - __main__ - INFO - Starting LSTM training for Aave
+2025-09-29 00:25:53,196 - ml.lstm_model - ERROR - Data loading error for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,196 - __main__ - ERROR - LSTM training failed for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,196 - __main__ - ERROR - Failed to train LSTM for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,196 - __main__ - INFO - Starting LSTM training for BinanceCoin
+2025-09-29 00:25:53,197 - ml.lstm_model - ERROR - Data loading error for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,197 - __main__ - ERROR - LSTM training failed for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,197 - __main__ - ERROR - Failed to train LSTM for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,197 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:25:53,197 - ml.lstm_model - ERROR - Data loading error for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,198 - __main__ - ERROR - LSTM training failed for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,198 - __main__ - ERROR - Failed to train LSTM for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,198 - __main__ - INFO - Starting LSTM training for Cardano
+2025-09-29 00:25:53,198 - ml.lstm_model - ERROR - Data loading error for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,198 - __main__ - ERROR - LSTM training failed for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,200 - __main__ - ERROR - Failed to train LSTM for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,200 - __main__ - INFO - Starting LSTM training for ChainLink
+2025-09-29 00:25:53,200 - ml.lstm_model - ERROR - Data loading error for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,200 - __main__ - ERROR - LSTM training failed for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,201 - __main__ - ERROR - Failed to train LSTM for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,201 - __main__ - INFO - Starting LSTM training for Cosmos
+2025-09-29 00:25:53,201 - ml.lstm_model - ERROR - Data loading error for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,201 - __main__ - ERROR - LSTM training failed for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,202 - __main__ - ERROR - Failed to train LSTM for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,202 - __main__ - INFO - Starting LSTM training for CryptocomCoin
+2025-09-29 00:25:53,202 - ml.lstm_model - ERROR - Data loading error for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,202 - __main__ - ERROR - LSTM training failed for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,202 - __main__ - ERROR - Failed to train LSTM for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,202 - __main__ - INFO - Starting LSTM training for Dogecoin
+2025-09-29 00:25:53,203 - ml.lstm_model - ERROR - Data loading error for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,203 - __main__ - ERROR - LSTM training failed for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,203 - __main__ - ERROR - Failed to train LSTM for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,203 - __main__ - INFO - Starting LSTM training for EOS
+2025-09-29 00:25:53,203 - ml.lstm_model - ERROR - Data loading error for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,204 - __main__ - ERROR - LSTM training failed for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,204 - __main__ - ERROR - Failed to train LSTM for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,204 - __main__ - INFO - Starting LSTM training for Ethereum
+2025-09-29 00:25:53,204 - ml.lstm_model - ERROR - Data loading error for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,204 - __main__ - ERROR - LSTM training failed for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,204 - __main__ - ERROR - Failed to train LSTM for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,205 - __main__ - INFO - Starting LSTM training for Iota
+2025-09-29 00:25:53,205 - ml.lstm_model - ERROR - Data loading error for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,205 - __main__ - ERROR - LSTM training failed for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,205 - __main__ - ERROR - Failed to train LSTM for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,205 - __main__ - INFO - Starting LSTM training for Litecoin
+2025-09-29 00:25:53,206 - ml.lstm_model - ERROR - Data loading error for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,206 - __main__ - ERROR - LSTM training failed for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,206 - __main__ - ERROR - Failed to train LSTM for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,206 - __main__ - INFO - Starting LSTM training for Monero
+2025-09-29 00:25:53,206 - ml.lstm_model - ERROR - Data loading error for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,206 - __main__ - ERROR - LSTM training failed for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,208 - __main__ - ERROR - Failed to train LSTM for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,208 - __main__ - INFO - Starting LSTM training for NEM
+2025-09-29 00:25:53,208 - ml.lstm_model - ERROR - Data loading error for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,208 - __main__ - ERROR - LSTM training failed for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,208 - __main__ - ERROR - Failed to train LSTM for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,208 - __main__ - INFO - Starting LSTM training for Polkadot
+2025-09-29 00:25:53,209 - ml.lstm_model - ERROR - Data loading error for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,209 - __main__ - ERROR - LSTM training failed for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,209 - __main__ - ERROR - Failed to train LSTM for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,209 - __main__ - INFO - Starting LSTM training for Solana
+2025-09-29 00:25:53,210 - ml.lstm_model - ERROR - Data loading error for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,210 - __main__ - ERROR - LSTM training failed for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,210 - __main__ - ERROR - Failed to train LSTM for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,210 - __main__ - INFO - Starting LSTM training for Stellar
+2025-09-29 00:25:53,211 - ml.lstm_model - ERROR - Data loading error for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,211 - __main__ - ERROR - LSTM training failed for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,211 - __main__ - ERROR - Failed to train LSTM for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,211 - __main__ - INFO - Starting LSTM training for Tether
+2025-09-29 00:25:53,211 - ml.lstm_model - ERROR - Data loading error for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,212 - __main__ - ERROR - LSTM training failed for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,212 - __main__ - ERROR - Failed to train LSTM for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,212 - __main__ - INFO - Starting LSTM training for Tron
+2025-09-29 00:25:53,212 - ml.lstm_model - ERROR - Data loading error for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,213 - __main__ - ERROR - LSTM training failed for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,213 - __main__ - ERROR - Failed to train LSTM for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,213 - __main__ - INFO - Starting LSTM training for USDCoin
+2025-09-29 00:25:53,213 - ml.lstm_model - ERROR - Data loading error for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,214 - __main__ - ERROR - LSTM training failed for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,214 - __main__ - ERROR - Failed to train LSTM for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,214 - __main__ - INFO - Starting LSTM training for Uniswap
+2025-09-29 00:25:53,214 - ml.lstm_model - ERROR - Data loading error for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,214 - __main__ - ERROR - LSTM training failed for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,215 - __main__ - ERROR - Failed to train LSTM for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,215 - __main__ - INFO - Starting LSTM training for WrappedBitcoin
+2025-09-29 00:25:53,215 - ml.lstm_model - ERROR - Data loading error for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,215 - __main__ - ERROR - LSTM training failed for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,216 - __main__ - ERROR - Failed to train LSTM for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,216 - __main__ - INFO - Starting LSTM training for XRP
+2025-09-29 00:25:53,216 - ml.lstm_model - ERROR - Data loading error for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,216 - __main__ - ERROR - LSTM training failed for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,216 - __main__ - ERROR - Failed to train LSTM for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:25:53,217 - __main__ - INFO - LSTM training completed: 0/23 successful
+2025-09-29 00:27:10,209 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:27:10,211 - __main__ - INFO - Starting LSTM training for Aave
+2025-09-29 00:27:10,211 - ml.lstm_model - ERROR - Data loading error for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,211 - __main__ - ERROR - LSTM training failed for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,212 - __main__ - ERROR - Failed to train LSTM for Aave: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,212 - __main__ - INFO - Starting LSTM training for BinanceCoin
+2025-09-29 00:27:10,212 - ml.lstm_model - ERROR - Data loading error for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,212 - __main__ - ERROR - LSTM training failed for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,212 - __main__ - ERROR - Failed to train LSTM for BinanceCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,212 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:27:10,213 - ml.lstm_model - ERROR - Data loading error for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,213 - __main__ - ERROR - LSTM training failed for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,213 - __main__ - ERROR - Failed to train LSTM for Bitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,213 - __main__ - INFO - Starting LSTM training for Cardano
+2025-09-29 00:27:10,213 - ml.lstm_model - ERROR - Data loading error for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,213 - __main__ - ERROR - LSTM training failed for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,214 - __main__ - ERROR - Failed to train LSTM for Cardano: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,214 - __main__ - INFO - Starting LSTM training for ChainLink
+2025-09-29 00:27:10,214 - ml.lstm_model - ERROR - Data loading error for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,214 - __main__ - ERROR - LSTM training failed for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,214 - __main__ - ERROR - Failed to train LSTM for ChainLink: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,215 - __main__ - INFO - Starting LSTM training for Cosmos
+2025-09-29 00:27:10,215 - ml.lstm_model - ERROR - Data loading error for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,215 - __main__ - ERROR - LSTM training failed for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,215 - __main__ - ERROR - Failed to train LSTM for Cosmos: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,216 - __main__ - INFO - Starting LSTM training for CryptocomCoin
+2025-09-29 00:27:10,216 - ml.lstm_model - ERROR - Data loading error for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,216 - __main__ - ERROR - LSTM training failed for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,216 - __main__ - ERROR - Failed to train LSTM for CryptocomCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,216 - __main__ - INFO - Starting LSTM training for Dogecoin
+2025-09-29 00:27:10,217 - ml.lstm_model - ERROR - Data loading error for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,217 - __main__ - ERROR - LSTM training failed for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,217 - __main__ - ERROR - Failed to train LSTM for Dogecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,217 - __main__ - INFO - Starting LSTM training for EOS
+2025-09-29 00:27:10,217 - ml.lstm_model - ERROR - Data loading error for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,218 - __main__ - ERROR - LSTM training failed for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,218 - __main__ - ERROR - Failed to train LSTM for EOS: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,218 - __main__ - INFO - Starting LSTM training for Ethereum
+2025-09-29 00:27:10,218 - ml.lstm_model - ERROR - Data loading error for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,218 - __main__ - ERROR - LSTM training failed for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,219 - __main__ - ERROR - Failed to train LSTM for Ethereum: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,219 - __main__ - INFO - Starting LSTM training for Iota
+2025-09-29 00:27:10,219 - ml.lstm_model - ERROR - Data loading error for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,219 - __main__ - ERROR - LSTM training failed for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,220 - __main__ - ERROR - Failed to train LSTM for Iota: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,220 - __main__ - INFO - Starting LSTM training for Litecoin
+2025-09-29 00:27:10,220 - ml.lstm_model - ERROR - Data loading error for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,220 - __main__ - ERROR - LSTM training failed for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,220 - __main__ - ERROR - Failed to train LSTM for Litecoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,220 - __main__ - INFO - Starting LSTM training for Monero
+2025-09-29 00:27:10,221 - ml.lstm_model - ERROR - Data loading error for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,221 - __main__ - ERROR - LSTM training failed for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,221 - __main__ - ERROR - Failed to train LSTM for Monero: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,221 - __main__ - INFO - Starting LSTM training for NEM
+2025-09-29 00:27:10,221 - ml.lstm_model - ERROR - Data loading error for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - ERROR - LSTM training failed for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - ERROR - Failed to train LSTM for NEM: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - INFO - Starting LSTM training for Polkadot
+2025-09-29 00:27:10,222 - ml.lstm_model - ERROR - Data loading error for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - ERROR - LSTM training failed for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - ERROR - Failed to train LSTM for Polkadot: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,222 - __main__ - INFO - Starting LSTM training for Solana
+2025-09-29 00:27:10,224 - ml.lstm_model - ERROR - Data loading error for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,224 - __main__ - ERROR - LSTM training failed for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,224 - __main__ - ERROR - Failed to train LSTM for Solana: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,224 - __main__ - INFO - Starting LSTM training for Stellar
+2025-09-29 00:27:10,224 - ml.lstm_model - ERROR - Data loading error for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,224 - __main__ - ERROR - LSTM training failed for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,225 - __main__ - ERROR - Failed to train LSTM for Stellar: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,225 - __main__ - INFO - Starting LSTM training for Tether
+2025-09-29 00:27:10,225 - ml.lstm_model - ERROR - Data loading error for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,225 - __main__ - ERROR - LSTM training failed for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,225 - __main__ - ERROR - Failed to train LSTM for Tether: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,225 - __main__ - INFO - Starting LSTM training for Tron
+2025-09-29 00:27:10,226 - ml.lstm_model - ERROR - Data loading error for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,226 - __main__ - ERROR - LSTM training failed for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,226 - __main__ - ERROR - Failed to train LSTM for Tron: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,226 - __main__ - INFO - Starting LSTM training for USDCoin
+2025-09-29 00:27:10,226 - ml.lstm_model - ERROR - Data loading error for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,226 - __main__ - ERROR - LSTM training failed for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,227 - __main__ - ERROR - Failed to train LSTM for USDCoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,227 - __main__ - INFO - Starting LSTM training for Uniswap
+2025-09-29 00:27:10,227 - ml.lstm_model - ERROR - Data loading error for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,227 - __main__ - ERROR - LSTM training failed for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,227 - __main__ - ERROR - Failed to train LSTM for Uniswap: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,227 - __main__ - INFO - Starting LSTM training for WrappedBitcoin
+2025-09-29 00:27:10,229 - ml.lstm_model - ERROR - Data loading error for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,229 - __main__ - ERROR - LSTM training failed for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,229 - __main__ - ERROR - Failed to train LSTM for WrappedBitcoin: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,229 - __main__ - INFO - Starting LSTM training for XRP
+2025-09-29 00:27:10,229 - ml.lstm_model - ERROR - Data loading error for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,230 - __main__ - ERROR - LSTM training failed for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,230 - __main__ - ERROR - Failed to train LSTM for XRP: [WinError 3] The system cannot find the path specified: 'C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\datasets\\coins_datasets'
+2025-09-29 00:27:10,230 - __main__ - INFO - LSTM training completed: 0/23 successful
+2025-09-29 00:29:30,065 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:29:30,079 - ml.lstm_model - INFO - Loaded 1000 records for Bitcoin
+2025-09-29 00:29:30,079 - __main__ - INFO - Loaded 1000 records for Bitcoin
+2025-09-29 00:29:30,324 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.052944, Test Loss: 0.694510
+2025-09-29 00:29:31,998 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(53506290.0), 'test_mse': np.float32(1899390500.0), 'train_mae': np.float32(6124.939), 'test_mae': np.float32(42405.56), 'final_train_loss': 0.01858636923134327, 'final_test_loss': 0.5229491591453552}
+2025-09-29 00:29:32,006 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_bitcoin_model.pth
+2025-09-29 00:29:32,006 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_bitcoin_scaler.pkl
+2025-09-29 00:29:32,006 - __main__ - INFO - LSTM training completed for Bitcoin
+2025-09-29 00:29:32,006 - __main__ - INFO - Final metrics: {'train_mse': np.float32(53506290.0), 'test_mse': np.float32(1899390500.0), 'train_mae': np.float32(6124.939), 'test_mae': np.float32(42405.56), 'final_train_loss': 0.01858636923134327, 'final_test_loss': 0.5229491591453552}
+2025-09-29 00:29:46,001 - __main__ - INFO - Starting LSTM training for all cryptocurrencies
+2025-09-29 00:29:46,001 - __main__ - INFO - Starting LSTM training for Aave
+2025-09-29 00:29:46,009 - ml.lstm_model - INFO - Loaded 275 records for Aave
+2025-09-29 00:29:46,010 - __main__ - INFO - Loaded 275 records for Aave
+2025-09-29 00:29:46,106 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.171753, Test Loss: 0.091026
+2025-09-29 00:29:46,523 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.081263, Test Loss: 0.018119
+2025-09-29 00:29:46,950 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.066629, Test Loss: 0.010764
+2025-09-29 00:29:47,345 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.061171, Test Loss: 0.008861
+2025-09-29 00:29:47,737 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.052990, Test Loss: 0.011377
+2025-09-29 00:29:48,130 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.042332, Test Loss: 0.010090
+2025-09-29 00:29:48,529 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.032066, Test Loss: 0.009751
+2025-09-29 00:29:48,909 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.035061, Test Loss: 0.013335
+2025-09-29 00:29:49,333 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.028556, Test Loss: 0.010648
+2025-09-29 00:29:49,739 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.028426, Test Loss: 0.012637
+2025-09-29 00:29:50,107 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(6713.8857), 'test_mse': np.float32(3888.361), 'train_mae': np.float32(65.9356), 'test_mae': np.float32(53.295513), 'final_train_loss': 0.02655474841594696, 'final_test_loss': 0.010638981126248837}
+2025-09-29 00:29:50,114 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_aave_model.pth
+2025-09-29 00:29:50,114 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_aave_scaler.pkl
+2025-09-29 00:29:50,114 - __main__ - INFO - LSTM training completed for Aave
+2025-09-29 00:29:50,114 - __main__ - INFO - Final metrics: {'train_mse': np.float32(6713.8857), 'test_mse': np.float32(3888.361), 'train_mae': np.float32(65.9356), 'test_mae': np.float32(53.295513), 'final_train_loss': 0.02655474841594696, 'final_test_loss': 0.010638981126248837}
+2025-09-29 00:29:50,114 - __main__ - INFO - Successfully trained LSTM for Aave
+2025-09-29 00:29:50,115 - __main__ - INFO - Starting LSTM training for BinanceCoin
+2025-09-29 00:29:50,124 - ml.lstm_model - INFO - Loaded 1000 records for BinanceCoin
+2025-09-29 00:29:50,124 - __main__ - INFO - Loaded 1000 records for BinanceCoin
+2025-09-29 00:29:50,328 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.002132, Test Loss: 0.261357
+2025-09-29 00:29:52,080 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.000479, Test Loss: 0.239929
+2025-09-29 00:29:53,868 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.000364, Test Loss: 0.244113
+2025-09-29 00:29:55,436 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.000314, Test Loss: 0.237251
+2025-09-29 00:29:57,093 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.000271, Test Loss: 0.239245
+2025-09-29 00:29:58,694 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.000273, Test Loss: 0.240456
+2025-09-29 00:30:00,309 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.000265, Test Loss: 0.240564
+2025-09-29 00:30:01,975 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.000276, Test Loss: 0.240488
+2025-09-29 00:30:03,611 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000229, Test Loss: 0.240386
+2025-09-29 00:30:05,192 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000225, Test Loss: 0.240341
+2025-09-29 00:30:06,658 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(59.1655), 'test_mse': np.float32(108250.16), 'train_mae': np.float32(6.3745427), 'test_mae': np.float32(275.37787), 'final_train_loss': 0.00025479981559328735, 'final_test_loss': 0.24031582474708557}
+2025-09-29 00:30:06,662 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_binancecoin_model.pth
+2025-09-29 00:30:06,664 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_binancecoin_scaler.pkl
+2025-09-29 00:30:06,664 - __main__ - INFO - LSTM training completed for BinanceCoin
+2025-09-29 00:30:06,664 - __main__ - INFO - Final metrics: {'train_mse': np.float32(59.1655), 'test_mse': np.float32(108250.16), 'train_mae': np.float32(6.3745427), 'test_mae': np.float32(275.37787), 'final_train_loss': 0.00025479981559328735, 'final_test_loss': 0.24031582474708557}
+2025-09-29 00:30:06,664 - __main__ - INFO - Successfully trained LSTM for BinanceCoin
+2025-09-29 00:30:06,665 - __main__ - INFO - Starting LSTM training for Bitcoin
+2025-09-29 00:30:06,678 - ml.lstm_model - INFO - Loaded 1000 records for Bitcoin
+2025-09-29 00:30:06,678 - __main__ - INFO - Loaded 1000 records for Bitcoin
+2025-09-29 00:30:06,847 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.005025, Test Loss: 0.407594
+2025-09-29 00:30:08,532 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.004611, Test Loss: 0.394946
+2025-09-29 00:30:10,205 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.004486, Test Loss: 0.377832
+2025-09-29 00:30:11,858 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.004333, Test Loss: 0.370348
+2025-09-29 00:30:13,407 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.004114, Test Loss: 0.338898
+2025-09-29 00:30:15,055 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.003151, Test Loss: 0.242092
+2025-09-29 00:30:16,665 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001008, Test Loss: 0.024943
+2025-09-29 00:30:18,270 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.000885, Test Loss: 0.053434
+2025-09-29 00:30:19,893 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000749, Test Loss: 0.061696
+2025-09-29 00:30:21,532 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000709, Test Loss: 0.046959
+2025-09-29 00:30:23,011 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(1228996.9), 'test_mse': np.float32(158847470.0), 'train_mae': np.float32(864.57166), 'test_mae': np.float32(10236.584), 'final_train_loss': 0.0006306491559371352, 'final_test_loss': 0.04373464360833168}
+2025-09-29 00:30:23,017 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_bitcoin_model.pth
+2025-09-29 00:30:23,017 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_bitcoin_scaler.pkl
+2025-09-29 00:30:23,017 - __main__ - INFO - LSTM training completed for Bitcoin
+2025-09-29 00:30:23,017 - __main__ - INFO - Final metrics: {'train_mse': np.float32(1228996.9), 'test_mse': np.float32(158847470.0), 'train_mae': np.float32(864.57166), 'test_mae': np.float32(10236.584), 'final_train_loss': 0.0006306491559371352, 'final_test_loss': 0.04373464360833168}
+2025-09-29 00:30:23,018 - __main__ - INFO - Successfully trained LSTM for Bitcoin
+2025-09-29 00:30:23,018 - __main__ - INFO - Starting LSTM training for Cardano
+2025-09-29 00:30:23,035 - ml.lstm_model - INFO - Loaded 1000 records for Cardano
+2025-09-29 00:30:23,036 - __main__ - INFO - Loaded 1000 records for Cardano
+2025-09-29 00:30:23,206 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.030549, Test Loss: 0.432133
+2025-09-29 00:30:24,935 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.003219, Test Loss: 0.289641
+2025-09-29 00:30:26,553 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.002158, Test Loss: 0.238245
+2025-09-29 00:30:28,188 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.001257, Test Loss: 0.269178
+2025-09-29 00:30:29,802 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.001126, Test Loss: 0.267625
+2025-09-29 00:30:31,422 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.001074, Test Loss: 0.263483
+2025-09-29 00:30:33,051 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.000995, Test Loss: 0.261675
+2025-09-29 00:30:34,891 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001036, Test Loss: 0.260990
+2025-09-29 00:30:36,714 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000969, Test Loss: 0.260747
+2025-09-29 00:30:38,435 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000960, Test Loss: 0.260641
+2025-09-29 00:30:39,956 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.0014589535), 'test_mse': np.float32(1.3608445), 'train_mae': np.float32(0.02780125), 'test_mae': np.float32(1.067381), 'final_train_loss': 0.0010244246805086732, 'final_test_loss': 0.2606024146080017}
+2025-09-29 00:30:39,961 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cardano_model.pth
+2025-09-29 00:30:39,961 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cardano_scaler.pkl
+2025-09-29 00:30:39,961 - __main__ - INFO - LSTM training completed for Cardano
+2025-09-29 00:30:39,961 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.0014589535), 'test_mse': np.float32(1.3608445), 'train_mae': np.float32(0.02780125), 'test_mae': np.float32(1.067381), 'final_train_loss': 0.0010244246805086732, 'final_test_loss': 0.2606024146080017}
+2025-09-29 00:30:39,961 - __main__ - INFO - Successfully trained LSTM for Cardano
+2025-09-29 00:30:39,962 - __main__ - INFO - Starting LSTM training for ChainLink
+2025-09-29 00:30:39,978 - ml.lstm_model - INFO - Loaded 1000 records for ChainLink
+2025-09-29 00:30:39,978 - __main__ - INFO - Loaded 1000 records for ChainLink
+2025-09-29 00:30:40,225 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.007589, Test Loss: 0.236008
+2025-09-29 00:30:41,894 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.007139, Test Loss: 0.225614
+2025-09-29 00:30:43,670 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.006463, Test Loss: 0.204047
+2025-09-29 00:30:45,241 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.003594, Test Loss: 0.111717
+2025-09-29 00:30:46,957 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.001287, Test Loss: 0.050903
+2025-09-29 00:30:48,639 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.001110, Test Loss: 0.068945
+2025-09-29 00:30:50,329 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.000898, Test Loss: 0.048154
+2025-09-29 00:30:51,924 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.000776, Test Loss: 0.045405
+2025-09-29 00:30:53,628 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000852, Test Loss: 0.048545
+2025-09-29 00:30:55,277 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000747, Test Loss: 0.049774
+2025-09-29 00:30:56,882 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(1.0331936), 'test_mse': np.float32(135.75513), 'train_mae': np.float32(0.623314), 'test_mae': np.float32(9.711436), 'final_train_loss': 0.0008548781624995172, 'final_test_loss': 0.05021347478032112}
+2025-09-29 00:30:56,888 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_chainlink_model.pth
+2025-09-29 00:30:56,888 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_chainlink_scaler.pkl
+2025-09-29 00:30:56,888 - __main__ - INFO - LSTM training completed for ChainLink
+2025-09-29 00:30:56,888 - __main__ - INFO - Final metrics: {'train_mse': np.float32(1.0331936), 'test_mse': np.float32(135.75513), 'train_mae': np.float32(0.623314), 'test_mae': np.float32(9.711436), 'final_train_loss': 0.0008548781624995172, 'final_test_loss': 0.05021347478032112}
+2025-09-29 00:30:56,888 - __main__ - INFO - Successfully trained LSTM for ChainLink
+2025-09-29 00:30:56,888 - __main__ - INFO - Starting LSTM training for Cosmos
+2025-09-29 00:30:56,905 - ml.lstm_model - INFO - Loaded 845 records for Cosmos
+2025-09-29 00:30:56,905 - __main__ - INFO - Loaded 845 records for Cosmos
+2025-09-29 00:30:57,076 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.043154, Test Loss: 0.511488
+2025-09-29 00:30:58,435 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.011693, Test Loss: 0.352972
+2025-09-29 00:30:59,828 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.005945, Test Loss: 0.243225
+2025-09-29 00:31:01,138 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.004148, Test Loss: 0.300301
+2025-09-29 00:31:02,481 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.003523, Test Loss: 0.288461
+2025-09-29 00:31:03,799 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.003494, Test Loss: 0.278502
+2025-09-29 00:31:05,155 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.003459, Test Loss: 0.275509
+2025-09-29 00:31:06,531 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.003460, Test Loss: 0.275006
+2025-09-29 00:31:07,863 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.003440, Test Loss: 0.275072
+2025-09-29 00:31:09,274 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.003460, Test Loss: 0.275148
+2025-09-29 00:31:10,641 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(2.0866077), 'test_mse': np.float32(212.47517), 'train_mae': np.float32(1.1556095), 'test_mae': np.float32(13.722937), 'final_train_loss': 0.0033622095361351967, 'final_test_loss': 0.2752058804035187}
+2025-09-29 00:31:10,647 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cosmos_model.pth
+2025-09-29 00:31:10,648 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cosmos_scaler.pkl
+2025-09-29 00:31:10,648 - __main__ - INFO - LSTM training completed for Cosmos
+2025-09-29 00:31:10,648 - __main__ - INFO - Final metrics: {'train_mse': np.float32(2.0866077), 'test_mse': np.float32(212.47517), 'train_mae': np.float32(1.1556095), 'test_mae': np.float32(13.722937), 'final_train_loss': 0.0033622095361351967, 'final_test_loss': 0.2752058804035187}
+2025-09-29 00:31:10,648 - __main__ - INFO - Successfully trained LSTM for Cosmos
+2025-09-29 00:31:10,649 - __main__ - INFO - Starting LSTM training for CryptocomCoin
+2025-09-29 00:31:10,658 - ml.lstm_model - INFO - Loaded 935 records for CryptocomCoin
+2025-09-29 00:31:10,658 - __main__ - INFO - Loaded 935 records for CryptocomCoin
+2025-09-29 00:31:10,842 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.107837, Test Loss: 0.382460
+2025-09-29 00:31:12,467 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.070181, Test Loss: 0.286867
+2025-09-29 00:31:14,000 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.043012, Test Loss: 0.090223
+2025-09-29 00:31:15,498 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.034678, Test Loss: 0.158194
+2025-09-29 00:31:17,043 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.030193, Test Loss: 0.126129
+2025-09-29 00:31:18,695 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.030681, Test Loss: 0.110118
+2025-09-29 00:31:20,248 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.028661, Test Loss: 0.110239
+2025-09-29 00:31:21,920 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.030312, Test Loss: 0.110291
+2025-09-29 00:31:23,514 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.030625, Test Loss: 0.109178
+2025-09-29 00:31:25,150 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.026772, Test Loss: 0.108285
+2025-09-29 00:31:26,637 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.0012812978), 'test_mse': np.float32(0.0059324442), 'train_mae': np.float32(0.027466387), 'test_mae': np.float32(0.063045174), 'final_train_loss': 0.026441287249326706, 'final_test_loss': 0.10768367350101471}
+2025-09-29 00:31:26,642 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cryptocomcoin_model.pth
+2025-09-29 00:31:26,642 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_cryptocomcoin_scaler.pkl
+2025-09-29 00:31:26,642 - __main__ - INFO - LSTM training completed for CryptocomCoin
+2025-09-29 00:31:26,643 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.0012812978), 'test_mse': np.float32(0.0059324442), 'train_mae': np.float32(0.027466387), 'test_mae': np.float32(0.063045174), 'final_train_loss': 0.026441287249326706, 'final_test_loss': 0.10768367350101471}
+2025-09-29 00:31:26,643 - __main__ - INFO - Successfully trained LSTM for CryptocomCoin
+2025-09-29 00:31:26,643 - __main__ - INFO - Starting LSTM training for Dogecoin
+2025-09-29 00:31:26,666 - ml.lstm_model - INFO - Loaded 1000 records for Dogecoin
+2025-09-29 00:31:26,667 - __main__ - INFO - Loaded 1000 records for Dogecoin
+2025-09-29 00:31:26,865 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.011218, Test Loss: 0.090428
+2025-09-29 00:31:28,589 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.001183, Test Loss: 0.137417
+2025-09-29 00:31:30,467 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.000733, Test Loss: 0.129772
+2025-09-29 00:31:32,107 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.000524, Test Loss: 0.124703
+2025-09-29 00:31:33,741 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.000456, Test Loss: 0.123721
+2025-09-29 00:31:35,473 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.000493, Test Loss: 0.123823
+2025-09-29 00:31:37,101 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.000450, Test Loss: 0.124007
+2025-09-29 00:31:38,708 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.000470, Test Loss: 0.124135
+2025-09-29 00:31:40,346 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000398, Test Loss: 0.124203
+2025-09-29 00:31:41,970 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000412, Test Loss: 0.124239
+2025-09-29 00:31:43,716 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(8.479115e-06), 'test_mse': np.float32(0.058005743), 'train_mae': np.float32(0.0028632702), 'test_mae': np.float32(0.1727437), 'final_train_loss': 0.0004765329067595303, 'final_test_loss': 0.12425809353590012}
+2025-09-29 00:31:43,723 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_dogecoin_model.pth
+2025-09-29 00:31:43,723 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_dogecoin_scaler.pkl
+2025-09-29 00:31:43,723 - __main__ - INFO - LSTM training completed for Dogecoin
+2025-09-29 00:31:43,723 - __main__ - INFO - Final metrics: {'train_mse': np.float32(8.479115e-06), 'test_mse': np.float32(0.058005743), 'train_mae': np.float32(0.0028632702), 'test_mae': np.float32(0.1727437), 'final_train_loss': 0.0004765329067595303, 'final_test_loss': 0.12425809353590012}
+2025-09-29 00:31:43,724 - __main__ - INFO - Successfully trained LSTM for Dogecoin
+2025-09-29 00:31:43,724 - __main__ - INFO - Starting LSTM training for EOS
+2025-09-29 00:31:43,733 - ml.lstm_model - INFO - Loaded 1000 records for EOS
+2025-09-29 00:31:43,733 - __main__ - INFO - Loaded 1000 records for EOS
+2025-09-29 00:31:43,931 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.072482, Test Loss: 0.160167
+2025-09-29 00:31:45,695 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.023121, Test Loss: 0.073668
+2025-09-29 00:31:47,438 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.015526, Test Loss: 0.032916
+2025-09-29 00:31:49,053 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.011795, Test Loss: 0.050662
+2025-09-29 00:31:50,633 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.012393, Test Loss: 0.046778
+2025-09-29 00:31:52,235 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.010861, Test Loss: 0.042948
+2025-09-29 00:31:53,824 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.011799, Test Loss: 0.041575
+2025-09-29 00:31:55,409 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.011445, Test Loss: 0.041185
+2025-09-29 00:31:56,996 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.010090, Test Loss: 0.041103
+2025-09-29 00:31:58,675 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.011134, Test Loss: 0.041083
+2025-09-29 00:32:00,163 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(1.3667346), 'test_mse': np.float32(6.543324), 'train_mae': np.float32(0.860823), 'test_mae': np.float32(1.7836704), 'final_train_loss': 0.010774800553917885, 'final_test_loss': 0.04106932133436203}
+2025-09-29 00:32:00,169 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_eos_model.pth
+2025-09-29 00:32:00,169 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_eos_scaler.pkl
+2025-09-29 00:32:00,169 - __main__ - INFO - LSTM training completed for EOS
+2025-09-29 00:32:00,169 - __main__ - INFO - Final metrics: {'train_mse': np.float32(1.3667346), 'test_mse': np.float32(6.543324), 'train_mae': np.float32(0.860823), 'test_mae': np.float32(1.7836704), 'final_train_loss': 0.010774800553917885, 'final_test_loss': 0.04106932133436203}
+2025-09-29 00:32:00,170 - __main__ - INFO - Successfully trained LSTM for EOS
+2025-09-29 00:32:00,170 - __main__ - INFO - Starting LSTM training for Ethereum
+2025-09-29 00:32:00,191 - ml.lstm_model - INFO - Loaded 1000 records for Ethereum
+2025-09-29 00:32:00,191 - __main__ - INFO - Loaded 1000 records for Ethereum
+2025-09-29 00:32:00,368 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.018654, Test Loss: 0.348043
+2025-09-29 00:32:01,996 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.002502, Test Loss: 0.199864
+2025-09-29 00:32:03,648 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.001990, Test Loss: 0.231367
+2025-09-29 00:32:05,230 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.001803, Test Loss: 0.241752
+2025-09-29 00:32:06,788 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.001789, Test Loss: 0.235089
+2025-09-29 00:32:08,430 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.001811, Test Loss: 0.231155
+2025-09-29 00:32:10,086 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001690, Test Loss: 0.229980
+2025-09-29 00:32:11,718 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001686, Test Loss: 0.229836
+2025-09-29 00:32:13,281 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.001686, Test Loss: 0.229833
+2025-09-29 00:32:14,900 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.001737, Test Loss: 0.229846
+2025-09-29 00:32:16,409 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(15333.404), 'test_mse': np.float32(3834321.2), 'train_mae': np.float32(89.18565), 'test_mae': np.float32(1833.8478), 'final_train_loss': 0.0016096998006105423, 'final_test_loss': 0.22984421253204346}
+2025-09-29 00:32:16,414 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_ethereum_model.pth
+2025-09-29 00:32:16,414 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_ethereum_scaler.pkl
+2025-09-29 00:32:16,414 - __main__ - INFO - LSTM training completed for Ethereum
+2025-09-29 00:32:16,414 - __main__ - INFO - Final metrics: {'train_mse': np.float32(15333.404), 'test_mse': np.float32(3834321.2), 'train_mae': np.float32(89.18565), 'test_mae': np.float32(1833.8478), 'final_train_loss': 0.0016096998006105423, 'final_test_loss': 0.22984421253204346}
+2025-09-29 00:32:16,414 - __main__ - INFO - Successfully trained LSTM for Ethereum
+2025-09-29 00:32:16,415 - __main__ - INFO - Starting LSTM training for Iota
+2025-09-29 00:32:16,421 - ml.lstm_model - INFO - Loaded 1000 records for Iota
+2025-09-29 00:32:16,421 - __main__ - INFO - Loaded 1000 records for Iota
+2025-09-29 00:32:16,594 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.004945, Test Loss: 0.243524
+2025-09-29 00:32:18,165 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.001650, Test Loss: 0.199306
+2025-09-29 00:32:19,731 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.001398, Test Loss: 0.217601
+2025-09-29 00:32:21,299 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.001252, Test Loss: 0.209235
+2025-09-29 00:32:22,876 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.001149, Test Loss: 0.207009
+2025-09-29 00:32:24,444 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.001256, Test Loss: 0.207483
+2025-09-29 00:32:26,072 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001172, Test Loss: 0.207974
+2025-09-29 00:32:27,631 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001190, Test Loss: 0.208226
+2025-09-29 00:32:29,229 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.001160, Test Loss: 0.208329
+2025-09-29 00:32:30,789 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.001129, Test Loss: 0.208364
+2025-09-29 00:32:32,280 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.004996477), 'test_mse': np.float32(1.2223457), 'train_mae': np.float32(0.05276847), 'test_mae': np.float32(0.9460123), 'final_train_loss': 0.0011846423149108887, 'final_test_loss': 0.20836558938026428}
+2025-09-29 00:32:32,285 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_iota_model.pth
+2025-09-29 00:32:32,285 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_iota_scaler.pkl
+2025-09-29 00:32:32,285 - __main__ - INFO - LSTM training completed for Iota
+2025-09-29 00:32:32,285 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.004996477), 'test_mse': np.float32(1.2223457), 'train_mae': np.float32(0.05276847), 'test_mae': np.float32(0.9460123), 'final_train_loss': 0.0011846423149108887, 'final_test_loss': 0.20836558938026428}
+2025-09-29 00:32:32,286 - __main__ - INFO - Successfully trained LSTM for Iota
+2025-09-29 00:32:32,286 - __main__ - INFO - Starting LSTM training for Litecoin
+2025-09-29 00:32:32,299 - ml.lstm_model - INFO - Loaded 1000 records for Litecoin
+2025-09-29 00:32:32,299 - __main__ - INFO - Loaded 1000 records for Litecoin
+2025-09-29 00:32:32,457 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.005662, Test Loss: 0.174846
+2025-09-29 00:32:34,059 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.004888, Test Loss: 0.165255
+2025-09-29 00:32:35,625 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.004714, Test Loss: 0.158874
+2025-09-29 00:32:37,292 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.004562, Test Loss: 0.154468
+2025-09-29 00:32:38,957 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.004274, Test Loss: 0.145068
+2025-09-29 00:32:40,585 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.003651, Test Loss: 0.121708
+2025-09-29 00:32:42,218 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001798, Test Loss: 0.034376
+2025-09-29 00:32:43,923 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001037, Test Loss: 0.024024
+2025-09-29 00:32:45,468 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.000961, Test Loss: 0.032068
+2025-09-29 00:32:47,044 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.000987, Test Loss: 0.023436
+2025-09-29 00:32:48,570 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(86.66659), 'test_mse': np.float32(2797.864), 'train_mae': np.float32(6.6301436), 'test_mae': np.float32(37.64712), 'final_train_loss': 0.0009946448262780905, 'final_test_loss': 0.021234681829810143}
+2025-09-29 00:32:48,575 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_litecoin_model.pth
+2025-09-29 00:32:48,575 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_litecoin_scaler.pkl
+2025-09-29 00:32:48,576 - __main__ - INFO - LSTM training completed for Litecoin
+2025-09-29 00:32:48,576 - __main__ - INFO - Final metrics: {'train_mse': np.float32(86.66659), 'test_mse': np.float32(2797.864), 'train_mae': np.float32(6.6301436), 'test_mae': np.float32(37.64712), 'final_train_loss': 0.0009946448262780905, 'final_test_loss': 0.021234681829810143}
+2025-09-29 00:32:48,576 - __main__ - INFO - Successfully trained LSTM for Litecoin
+2025-09-29 00:32:48,576 - __main__ - INFO - Starting LSTM training for Monero
+2025-09-29 00:32:48,597 - ml.lstm_model - INFO - Loaded 1000 records for Monero
+2025-09-29 00:32:48,597 - __main__ - INFO - Loaded 1000 records for Monero
+2025-09-29 00:32:48,769 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.014260, Test Loss: 0.262890
+2025-09-29 00:32:50,406 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.004426, Test Loss: 0.168616
+2025-09-29 00:32:52,064 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.004038, Test Loss: 0.186392
+2025-09-29 00:32:53,681 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.004228, Test Loss: 0.189988
+2025-09-29 00:32:55,266 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.003775, Test Loss: 0.183990
+2025-09-29 00:32:56,957 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.003728, Test Loss: 0.181008
+2025-09-29 00:32:58,520 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.003802, Test Loss: 0.180183
+2025-09-29 00:33:00,148 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.003715, Test Loss: 0.180019
+2025-09-29 00:33:01,772 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.003685, Test Loss: 0.179967
+2025-09-29 00:33:03,355 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.003853, Test Loss: 0.179953
+2025-09-29 00:33:04,817 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(670.5356), 'test_mse': np.float32(36533.53), 'train_mae': np.float32(20.221258), 'test_mae': np.float32(172.40872), 'final_train_loss': 0.003776362631469965, 'final_test_loss': 0.17995372414588928}
+2025-09-29 00:33:04,835 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_monero_model.pth
+2025-09-29 00:33:04,835 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_monero_scaler.pkl
+2025-09-29 00:33:04,835 - __main__ - INFO - LSTM training completed for Monero
+2025-09-29 00:33:04,836 - __main__ - INFO - Final metrics: {'train_mse': np.float32(670.5356), 'test_mse': np.float32(36533.53), 'train_mae': np.float32(20.221258), 'test_mae': np.float32(172.40872), 'final_train_loss': 0.003776362631469965, 'final_test_loss': 0.17995372414588928}
+2025-09-29 00:33:04,836 - __main__ - INFO - Successfully trained LSTM for Monero
+2025-09-29 00:33:04,836 - __main__ - INFO - Starting LSTM training for NEM
+2025-09-29 00:33:04,849 - ml.lstm_model - INFO - Loaded 1000 records for NEM
+2025-09-29 00:33:04,849 - __main__ - INFO - Loaded 1000 records for NEM
+2025-09-29 00:33:05,010 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.051765, Test Loss: 0.321396
+2025-09-29 00:33:06,629 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.009466, Test Loss: 0.166712
+2025-09-29 00:33:08,200 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.005604, Test Loss: 0.139655
+2025-09-29 00:33:09,814 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.006456, Test Loss: 0.160784
+2025-09-29 00:33:11,386 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.004895, Test Loss: 0.145652
+2025-09-29 00:33:12,993 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.005379, Test Loss: 0.138294
+2025-09-29 00:33:14,543 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.005328, Test Loss: 0.136822
+2025-09-29 00:33:16,148 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.005369, Test Loss: 0.136701
+2025-09-29 00:33:17,759 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.005444, Test Loss: 0.136895
+2025-09-29 00:33:19,345 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.005426, Test Loss: 0.136976
+2025-09-29 00:33:20,833 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.002012554), 'test_mse': np.float32(0.0800225), 'train_mae': np.float32(0.0290369), 'test_mae': np.float32(0.24282281), 'final_train_loss': 0.005113717634230852, 'final_test_loss': 0.13701492547988892}
+2025-09-29 00:33:20,838 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_nem_model.pth
+2025-09-29 00:33:20,838 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_nem_scaler.pkl
+2025-09-29 00:33:20,838 - __main__ - INFO - LSTM training completed for NEM
+2025-09-29 00:33:20,839 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.002012554), 'test_mse': np.float32(0.0800225), 'train_mae': np.float32(0.0290369), 'test_mae': np.float32(0.24282281), 'final_train_loss': 0.005113717634230852, 'final_test_loss': 0.13701492547988892}
+2025-09-29 00:33:20,839 - __main__ - INFO - Successfully trained LSTM for NEM
+2025-09-29 00:33:20,839 - __main__ - INFO - Starting LSTM training for Polkadot
+2025-09-29 00:33:20,853 - ml.lstm_model - INFO - Loaded 320 records for Polkadot
+2025-09-29 00:33:20,853 - __main__ - INFO - Loaded 320 records for Polkadot
+2025-09-29 00:33:20,920 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.181906, Test Loss: 0.088249
+2025-09-29 00:33:21,373 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.117531, Test Loss: 0.027835
+2025-09-29 00:33:21,843 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.096015, Test Loss: 0.021381
+2025-09-29 00:33:22,299 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.067895, Test Loss: 0.015769
+2025-09-29 00:33:22,760 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.035635, Test Loss: 0.029963
+2025-09-29 00:33:23,224 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.031659, Test Loss: 0.028497
+2025-09-29 00:33:23,675 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.025875, Test Loss: 0.071125
+2025-09-29 00:33:24,144 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.023219, Test Loss: 0.063890
+2025-09-29 00:33:24,599 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.020596, Test Loss: 0.064705
+2025-09-29 00:33:25,048 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.023366, Test Loss: 0.071736
+2025-09-29 00:33:25,478 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(31.114279), 'test_mse': np.float32(151.4801), 'train_mae': np.float32(4.7744017), 'test_mae': np.float32(11.802643), 'final_train_loss': 0.019631681963801384, 'final_test_loss': 0.07456978410482407}
+2025-09-29 00:33:25,484 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_polkadot_model.pth
+2025-09-29 00:33:25,484 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_polkadot_scaler.pkl
+2025-09-29 00:33:25,484 - __main__ - INFO - LSTM training completed for Polkadot
+2025-09-29 00:33:25,485 - __main__ - INFO - Final metrics: {'train_mse': np.float32(31.114279), 'test_mse': np.float32(151.4801), 'train_mae': np.float32(4.7744017), 'test_mae': np.float32(11.802643), 'final_train_loss': 0.019631681963801384, 'final_test_loss': 0.07456978410482407}
+2025-09-29 00:33:25,485 - __main__ - INFO - Successfully trained LSTM for Polkadot
+2025-09-29 00:33:25,485 - __main__ - INFO - Starting LSTM training for Solana
+2025-09-29 00:33:25,491 - ml.lstm_model - INFO - Loaded 452 records for Solana
+2025-09-29 00:33:25,491 - __main__ - INFO - Loaded 452 records for Solana
+2025-09-29 00:33:25,580 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.015280, Test Loss: 0.352147
+2025-09-29 00:33:26,373 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.014386, Test Loss: 0.340209
+2025-09-29 00:33:27,059 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.014117, Test Loss: 0.320091
+2025-09-29 00:33:27,764 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.010822, Test Loss: 0.269678
+2025-09-29 00:33:28,461 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.004111, Test Loss: 0.137406
+2025-09-29 00:33:29,160 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.002022, Test Loss: 0.036596
+2025-09-29 00:33:29,894 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001901, Test Loss: 0.016328
+2025-09-29 00:33:30,592 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001854, Test Loss: 0.023274
+2025-09-29 00:33:31,282 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.001485, Test Loss: 0.020373
+2025-09-29 00:33:31,991 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.001758, Test Loss: 0.017914
+2025-09-29 00:33:32,641 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(1.9179828), 'test_mse': np.float32(49.647263), 'train_mae': np.float32(0.97299206), 'test_mae': np.float32(5.480415), 'final_train_loss': 0.0016270858468487859, 'final_test_loss': 0.016178691759705544}
+2025-09-29 00:33:32,645 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_solana_model.pth
+2025-09-29 00:33:32,645 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_solana_scaler.pkl
+2025-09-29 00:33:32,646 - __main__ - INFO - LSTM training completed for Solana
+2025-09-29 00:33:32,646 - __main__ - INFO - Final metrics: {'train_mse': np.float32(1.9179828), 'test_mse': np.float32(49.647263), 'train_mae': np.float32(0.97299206), 'test_mae': np.float32(5.480415), 'final_train_loss': 0.0016270858468487859, 'final_test_loss': 0.016178691759705544}
+2025-09-29 00:33:32,646 - __main__ - INFO - Successfully trained LSTM for Solana
+2025-09-29 00:33:32,646 - __main__ - INFO - Starting LSTM training for Stellar
+2025-09-29 00:33:32,665 - ml.lstm_model - INFO - Loaded 1000 records for Stellar
+2025-09-29 00:33:32,666 - __main__ - INFO - Loaded 1000 records for Stellar
+2025-09-29 00:33:32,826 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.011086, Test Loss: 0.181373
+2025-09-29 00:33:34,419 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.004006, Test Loss: 0.267889
+2025-09-29 00:33:35,941 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.002849, Test Loss: 0.235395
+2025-09-29 00:33:37,499 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.002975, Test Loss: 0.231494
+2025-09-29 00:33:39,093 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.002789, Test Loss: 0.235398
+2025-09-29 00:33:40,669 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.002726, Test Loss: 0.237755
+2025-09-29 00:33:42,227 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.002513, Test Loss: 0.238549
+2025-09-29 00:33:43,758 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.002777, Test Loss: 0.238785
+2025-09-29 00:33:45,355 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.002708, Test Loss: 0.238841
+2025-09-29 00:33:46,906 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.002709, Test Loss: 0.238844
+2025-09-29 00:33:48,323 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.0009302137), 'test_mse': np.float32(0.11588884), 'train_mae': np.float32(0.023909941), 'test_mae': np.float32(0.3179297), 'final_train_loss': 0.0027716755867004395, 'final_test_loss': 0.23885315656661987}
+2025-09-29 00:33:48,337 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_stellar_model.pth
+2025-09-29 00:33:48,337 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_stellar_scaler.pkl
+2025-09-29 00:33:48,337 - __main__ - INFO - LSTM training completed for Stellar
+2025-09-29 00:33:48,337 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.0009302137), 'test_mse': np.float32(0.11588884), 'train_mae': np.float32(0.023909941), 'test_mae': np.float32(0.3179297), 'final_train_loss': 0.0027716755867004395, 'final_test_loss': 0.23885315656661987}
+2025-09-29 00:33:48,342 - __main__ - INFO - Successfully trained LSTM for Stellar
+2025-09-29 00:33:48,342 - __main__ - INFO - Starting LSTM training for Tether
+2025-09-29 00:33:48,354 - ml.lstm_model - INFO - Loaded 1000 records for Tether
+2025-09-29 00:33:48,355 - __main__ - INFO - Loaded 1000 records for Tether
+2025-09-29 00:33:48,521 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.270184, Test Loss: 0.224768
+2025-09-29 00:33:50,117 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.177225, Test Loss: 0.136238
+2025-09-29 00:33:51,652 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.040538, Test Loss: 0.006572
+2025-09-29 00:33:53,263 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.020141, Test Loss: 0.000330
+2025-09-29 00:33:54,830 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.020327, Test Loss: 0.001865
+2025-09-29 00:33:56,385 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.018105, Test Loss: 0.000455
+2025-09-29 00:33:57,997 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.016484, Test Loss: 0.000807
+2025-09-29 00:33:59,590 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.015394, Test Loss: 0.000287
+2025-09-29 00:34:01,208 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.015248, Test Loss: 0.000214
+2025-09-29 00:34:02,814 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.017222, Test Loss: 0.000214
+2025-09-29 00:34:04,275 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(3.6292153e-05), 'test_mse': np.float32(1.644845e-06), 'train_mae': np.float32(0.0036976766), 'test_mae': np.float32(0.00097654446), 'final_train_loss': 0.01600172184407711, 'final_test_loss': 0.00021760781237389892}
+2025-09-29 00:34:04,279 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_tether_model.pth
+2025-09-29 00:34:04,280 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_tether_scaler.pkl
+2025-09-29 00:34:04,280 - __main__ - INFO - LSTM training completed for Tether
+2025-09-29 00:34:04,280 - __main__ - INFO - Final metrics: {'train_mse': np.float32(3.6292153e-05), 'test_mse': np.float32(1.644845e-06), 'train_mae': np.float32(0.0036976766), 'test_mae': np.float32(0.00097654446), 'final_train_loss': 0.01600172184407711, 'final_test_loss': 0.00021760781237389892}
+2025-09-29 00:34:04,280 - __main__ - INFO - Successfully trained LSTM for Tether
+2025-09-29 00:34:04,280 - __main__ - INFO - Starting LSTM training for Tron
+2025-09-29 00:34:04,296 - ml.lstm_model - INFO - Loaded 1000 records for Tron
+2025-09-29 00:34:04,296 - __main__ - INFO - Loaded 1000 records for Tron
+2025-09-29 00:34:04,457 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.002716, Test Loss: 0.151210
+2025-09-29 00:34:06,090 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.001929, Test Loss: 0.159187
+2025-09-29 00:34:07,681 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.001811, Test Loss: 0.157108
+2025-09-29 00:34:09,278 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.001711, Test Loss: 0.159363
+2025-09-29 00:34:10,847 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.001759, Test Loss: 0.159265
+2025-09-29 00:34:12,436 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.001730, Test Loss: 0.158981
+2025-09-29 00:34:14,013 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.001714, Test Loss: 0.158900
+2025-09-29 00:34:15,601 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.001715, Test Loss: 0.158865
+2025-09-29 00:34:17,209 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.001718, Test Loss: 0.158867
+2025-09-29 00:34:18,806 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.001715, Test Loss: 0.158865
+2025-09-29 00:34:20,290 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(4.028617e-05), 'test_mse': np.float32(0.0038591404), 'train_mae': np.float32(0.005459105), 'test_mae': np.float32(0.050626528), 'final_train_loss': 0.001754468074068427, 'final_test_loss': 0.15886670351028442}
+2025-09-29 00:34:20,295 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_tron_model.pth
+2025-09-29 00:34:20,295 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_tron_scaler.pkl
+2025-09-29 00:34:20,296 - __main__ - INFO - LSTM training completed for Tron
+2025-09-29 00:34:20,296 - __main__ - INFO - Final metrics: {'train_mse': np.float32(4.028617e-05), 'test_mse': np.float32(0.0038591404), 'train_mae': np.float32(0.005459105), 'test_mae': np.float32(0.050626528), 'final_train_loss': 0.001754468074068427, 'final_test_loss': 0.15886670351028442}
+2025-09-29 00:34:20,296 - __main__ - INFO - Successfully trained LSTM for Tron
+2025-09-29 00:34:20,296 - __main__ - INFO - Starting LSTM training for USDCoin
+2025-09-29 00:34:20,311 - ml.lstm_model - INFO - Loaded 1000 records for USDCoin
+2025-09-29 00:34:20,311 - __main__ - INFO - Loaded 1000 records for USDCoin
+2025-09-29 00:34:20,472 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.513149, Test Loss: 0.420334
+2025-09-29 00:34:22,151 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.359038, Test Loss: 0.280330
+2025-09-29 00:34:23,728 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.106847, Test Loss: 0.034698
+2025-09-29 00:34:25,307 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.048592, Test Loss: 0.020367
+2025-09-29 00:34:26,950 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.027773, Test Loss: 0.000223
+2025-09-29 00:34:28,589 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.030660, Test Loss: 0.000337
+2025-09-29 00:34:30,242 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.029665, Test Loss: 0.000211
+2025-09-29 00:34:31,930 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.028424, Test Loss: 0.000643
+2025-09-29 00:34:33,531 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.028392, Test Loss: 0.000728
+2025-09-29 00:34:35,128 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.031042, Test Loss: 0.000695
+2025-09-29 00:34:36,593 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(4.9196482e-05), 'test_mse': np.float32(3.7048776e-06), 'train_mae': np.float32(0.0043973313), 'test_mae': np.float32(0.0017960147), 'final_train_loss': 0.027487577870488167, 'final_test_loss': 0.0006782981799915433}
+2025-09-29 00:34:36,598 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_usdcoin_model.pth
+2025-09-29 00:34:36,598 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_usdcoin_scaler.pkl
+2025-09-29 00:34:36,598 - __main__ - INFO - LSTM training completed for USDCoin
+2025-09-29 00:34:36,598 - __main__ - INFO - Final metrics: {'train_mse': np.float32(4.9196482e-05), 'test_mse': np.float32(3.7048776e-06), 'train_mae': np.float32(0.0043973313), 'test_mae': np.float32(0.0017960147), 'final_train_loss': 0.027487577870488167, 'final_test_loss': 0.0006782981799915433}
+2025-09-29 00:34:36,599 - __main__ - INFO - Successfully trained LSTM for USDCoin
+2025-09-29 00:34:36,599 - __main__ - INFO - Starting LSTM training for Uniswap
+2025-09-29 00:34:36,612 - ml.lstm_model - INFO - Loaded 292 records for Uniswap
+2025-09-29 00:34:36,613 - __main__ - INFO - Loaded 292 records for Uniswap
+2025-09-29 00:34:36,672 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.221930, Test Loss: 0.150697
+2025-09-29 00:34:37,090 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.147894, Test Loss: 0.066925
+2025-09-29 00:34:37,525 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.110319, Test Loss: 0.015147
+2025-09-29 00:34:37,940 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.078920, Test Loss: 0.009236
+2025-09-29 00:34:38,346 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.047113, Test Loss: 0.016129
+2025-09-29 00:34:38,743 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.026513, Test Loss: 0.031019
+2025-09-29 00:34:39,115 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.023870, Test Loss: 0.035607
+2025-09-29 00:34:39,539 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.023159, Test Loss: 0.034591
+2025-09-29 00:34:39,941 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.021013, Test Loss: 0.032958
+2025-09-29 00:34:40,340 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.020663, Test Loss: 0.036881
+2025-09-29 00:34:40,724 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(23.753653), 'test_mse': np.float32(58.424946), 'train_mae': np.float32(4.2567296), 'test_mae': np.float32(6.82307), 'final_train_loss': 0.018769217655062675, 'final_test_loss': 0.0343620628118515}
+2025-09-29 00:34:40,738 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_uniswap_model.pth
+2025-09-29 00:34:40,738 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_uniswap_scaler.pkl
+2025-09-29 00:34:40,738 - __main__ - INFO - LSTM training completed for Uniswap
+2025-09-29 00:34:40,738 - __main__ - INFO - Final metrics: {'train_mse': np.float32(23.753653), 'test_mse': np.float32(58.424946), 'train_mae': np.float32(4.2567296), 'test_mae': np.float32(6.82307), 'final_train_loss': 0.018769217655062675, 'final_test_loss': 0.0343620628118515}
+2025-09-29 00:34:40,740 - __main__ - INFO - Successfully trained LSTM for Uniswap
+2025-09-29 00:34:40,741 - __main__ - INFO - Starting LSTM training for WrappedBitcoin
+2025-09-29 00:34:40,749 - ml.lstm_model - INFO - Loaded 888 records for WrappedBitcoin
+2025-09-29 00:34:40,749 - __main__ - INFO - Loaded 888 records for WrappedBitcoin
+2025-09-29 00:34:40,975 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.025072, Test Loss: 0.526656
+2025-09-29 00:34:42,384 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.010512, Test Loss: 0.356600
+2025-09-29 00:34:43,786 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.009748, Test Loss: 0.387287
+2025-09-29 00:34:45,173 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.010279, Test Loss: 0.390671
+2025-09-29 00:34:46,579 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.009635, Test Loss: 0.374407
+2025-09-29 00:34:48,016 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.009973, Test Loss: 0.366234
+2025-09-29 00:34:49,433 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.009732, Test Loss: 0.363970
+2025-09-29 00:34:50,842 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.010067, Test Loss: 0.363232
+2025-09-29 00:34:52,228 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.009527, Test Loss: 0.362847
+2025-09-29 00:34:53,636 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.009952, Test Loss: 0.362521
+2025-09-29 00:34:54,915 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(31601234.0), 'test_mse': np.float32(1306208600.0), 'train_mae': np.float32(3215.7473), 'test_mae': np.float32(34846.33), 'final_train_loss': 0.009411895647644997, 'final_test_loss': 0.3623451888561249}
+2025-09-29 00:34:54,921 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_wrappedbitcoin_model.pth
+2025-09-29 00:34:54,921 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_wrappedbitcoin_scaler.pkl
+2025-09-29 00:34:54,921 - __main__ - INFO - LSTM training completed for WrappedBitcoin
+2025-09-29 00:34:54,921 - __main__ - INFO - Final metrics: {'train_mse': np.float32(31601234.0), 'test_mse': np.float32(1306208600.0), 'train_mae': np.float32(3215.7473), 'test_mae': np.float32(34846.33), 'final_train_loss': 0.009411895647644997, 'final_test_loss': 0.3623451888561249}
+2025-09-29 00:34:54,921 - __main__ - INFO - Successfully trained LSTM for WrappedBitcoin
+2025-09-29 00:34:54,922 - __main__ - INFO - Starting LSTM training for XRP
+2025-09-29 00:34:54,940 - ml.lstm_model - INFO - Loaded 1000 records for XRP
+2025-09-29 00:34:54,941 - __main__ - INFO - Loaded 1000 records for XRP
+2025-09-29 00:34:55,120 - ml.lstm_model - INFO - Epoch 0, Train Loss: 0.043324, Test Loss: 0.276066
+2025-09-29 00:34:56,735 - ml.lstm_model - INFO - Epoch 10, Train Loss: 0.008550, Test Loss: 0.173077
+2025-09-29 00:34:58,332 - ml.lstm_model - INFO - Epoch 20, Train Loss: 0.005698, Test Loss: 0.119910
+2025-09-29 00:34:59,855 - ml.lstm_model - INFO - Epoch 30, Train Loss: 0.003930, Test Loss: 0.150036
+2025-09-29 00:35:01,440 - ml.lstm_model - INFO - Epoch 40, Train Loss: 0.003796, Test Loss: 0.145472
+2025-09-29 00:35:03,031 - ml.lstm_model - INFO - Epoch 50, Train Loss: 0.003779, Test Loss: 0.140586
+2025-09-29 00:35:04,670 - ml.lstm_model - INFO - Epoch 60, Train Loss: 0.003857, Test Loss: 0.138550
+2025-09-29 00:35:06,243 - ml.lstm_model - INFO - Epoch 70, Train Loss: 0.003661, Test Loss: 0.137962
+2025-09-29 00:35:07,789 - ml.lstm_model - INFO - Epoch 80, Train Loss: 0.003521, Test Loss: 0.137876
+2025-09-29 00:35:09,329 - ml.lstm_model - INFO - Epoch 90, Train Loss: 0.003876, Test Loss: 0.137871
+2025-09-29 00:35:10,791 - ml.lstm_model - INFO - Training completed. Metrics: {'train_mse': np.float32(0.0076945657), 'test_mse': np.float32(0.39829522), 'train_mae': np.float32(0.06257944), 'test_mae': np.float32(0.47978258), 'final_train_loss': 0.00400512432679534, 'final_test_loss': 0.13788320124149323}
+2025-09-29 00:35:10,795 - ml.lstm_model - INFO - Model saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_xrp_model.pth
+2025-09-29 00:35:10,795 - ml.lstm_model - INFO - Scaler saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\lstm_xrp_scaler.pkl
+2025-09-29 00:35:10,796 - __main__ - INFO - LSTM training completed for XRP
+2025-09-29 00:35:10,796 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.0076945657), 'test_mse': np.float32(0.39829522), 'train_mae': np.float32(0.06257944), 'test_mae': np.float32(0.47978258), 'final_train_loss': 0.00400512432679534, 'final_test_loss': 0.13788320124149323}
+2025-09-29 00:35:10,796 - __main__ - INFO - Successfully trained LSTM for XRP
+2025-09-29 00:35:10,796 - __main__ - INFO - LSTM training completed: 23/23 successful

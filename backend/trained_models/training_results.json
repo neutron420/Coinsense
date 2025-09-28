@@ -1,0 +1,27 @@
+{
+  "lstm_models": {},
+  "sentiment_model": {
+    "model_type": "Sentiment Analysis",
+    "model_name": "ProsusAI/finbert",
+    "device": "cpu",
+    "test_results": {
+      "articles_analyzed": 3,
+      "sample_sentiments": [
+        "positive",
+        "positive",
+        "negative"
+      ]
+    },
+    "training_date": "2025-09-29T00:22:09.038662",
+    "status": "initialized"
+  },
+  "rag_model": {
+    "error": "[WinError 3] The system cannot find the path specified: 'C:\\\\Users\\\\R.K Singh\\\\Desktop\\\\coinsense\\\\backend\\\\app\\\\ml\\\\..\\\\datasets\\\\crypto_datasets'"
+  },
+  "training_summary": {
+    "total_models_trained": 3,
+    "lstm_models_trained": 0,
+    "training_completed": "2025-09-29T00:22:14.314327",
+    "models_directory": "C:\\Users\\R.K Singh\\Desktop\\coinsense\\backend\\trained_models"
+  }
+}

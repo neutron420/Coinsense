@@ -310,15 +310,19 @@ def load_crypto_data(symbol: str, days: int = 365) -> pd.DataFrame:
         filename = f"coin_{coin_name}.csv"
         
         # Construct the full path to the data file
-        data_path = os.path.join(os.path.dirname(__file__), '..', 'datasets', 'coins_datasets', filename)
+        # Go up from app/ml to backend, then up to project root, then to datasets
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+        datasets_dir = os.path.join(project_root, 'datasets', 'coins_datasets')
+        datasets_dir = os.path.abspath(datasets_dir)
+        data_path = os.path.join(datasets_dir, filename)
         
         if not os.path.exists(data_path):
              # Try to find a file that matches case-insensitively
-            files_in_dir = os.listdir(os.path.join(os.path.dirname(__file__), '..', 'datasets', 'coins_datasets'))
+            files_in_dir = os.listdir(datasets_dir)
             matching_file = next((f for f in files_in_dir if f.lower() == filename.lower()), None)
             if not matching_file:
                 raise ValueError(f"No data file found for symbol: {symbol}")
-            data_path = os.path.join(os.path.dirname(__file__), '..', 'datasets', 'coins_datasets', matching_file)
+            data_path = os.path.join(datasets_dir, matching_file)
 
         df = pd.read_csv(data_path)
 
