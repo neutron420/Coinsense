@@ -448,7 +448,6 @@ class CryptoRAGChatbot:
 chatbot = None
 
 def get_chatbot() -> CryptoRAGChatbot:
-    """Get or create global chatbot instance"""
     global chatbot
     if chatbot is None:
         chatbot = CryptoRAGChatbot()

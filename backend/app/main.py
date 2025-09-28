@@ -10,7 +10,7 @@ from contextlib import asynccontextmanager
 
 from config import settings
 from database import engine, Base
-from routes import chat, predict, sentiment, auth
+from .routes import chat, predict, sentiment, auth
 from auth import get_current_user
 from models import User
 

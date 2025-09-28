@@ -117,10 +117,15 @@ class Settings(BaseSettings):
     
     @validator('database_url', pre=True)
     def build_database_url(cls, v, values):
+        # If DATABASE_URL is explicitly set and not the default, use it
         if v and v != "postgresql://username:password@localhost:5432/coinsense_db":
             return v
         
-        # Build from individual components
+        # If using SQLite, return the SQLite URL
+        if v and v.startswith("sqlite://"):
+            return v
+        
+        # Build PostgreSQL URL from individual components (fallback)
         host = values.get('db_host', 'localhost')
         port = values.get('db_port', 5432)
         name = values.get('db_name', 'coinsense_db')

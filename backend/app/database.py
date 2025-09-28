@@ -1,7 +1,7 @@
 """
 Database configuration and connection setup
 """
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from config import settings
@@ -55,7 +55,7 @@ def test_connection():
     """Test database connection"""
     try:
         db = SessionLocal()
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
         db.close()
         logger.info("✅ Database connection test successful")
         return True
