@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 class CryptoRAGChatbot:
     """RAG-based chatbot for cryptocurrency knowledge"""
-    
+
     def __init__(self, model_name: str = "all-MiniLM-L6-v2", index_path: str = None, data_path: str = None):
         self.model_name = model_name
         self.model = SentenceTransformer(model_name)
@@ -26,13 +26,15 @@ class CryptoRAGChatbot:
         self.data = None
         self.index_path = index_path
         self.data_path = data_path
-        
+
         # Load or create index
         if index_path and os.path.exists(index_path):
             self.load_index()
-        elif data_path:
-            self.build_index_from_data(data_path)
-    
+        else:
+            # Build index from all datasets in the specified directory
+            dataset_dir = os.path.join(os.path.dirname(__file__), '..', 'datasets', 'crypto_datasets')
+            self.build_index_from_directory(dataset_dir)
+
     def load_crypto_dataset(self, csv_path: str) -> pd.DataFrame:
         """Load cryptocurrency dataset"""
         try:
@@ -42,7 +44,7 @@ class CryptoRAGChatbot:
         except Exception as e:
             logger.error(f"Error loading dataset: {e}")
             raise
-    
+
     def preprocess_text(self, text: str) -> str:
         """Preprocess text for better embedding"""
         if pd.isna(text):
@@ -58,7 +60,7 @@ class CryptoRAGChatbot:
         text = re.sub(r'\s+', ' ', text)
         
         return text
-    
+
     def create_knowledge_base(self, df: pd.DataFrame) -> List[Dict]:
         """Create knowledge base from cryptocurrency dataset"""
         knowledge_base = []
@@ -139,7 +141,7 @@ class CryptoRAGChatbot:
         except Exception as e:
             logger.error(f"Error creating knowledge base: {e}")
             raise
-    
+
     def _get_market_cap_tier(self, market_cap: str) -> str:
         """Determine market cap tier"""
         try:
@@ -188,34 +190,36 @@ class CryptoRAGChatbot:
                 return "very low"
         except:
             return "unknown"
-    
-    def build_index_from_data(self, csv_path: str):
-        """Build FAISS index from cryptocurrency dataset"""
-        try:
-            # Load data
-            df = self.load_crypto_dataset(csv_path)
             
-            # Create knowledge base
+    def build_index_from_directory(self, directory_path: str):
+        """Build FAISS index from all CSV files in a directory."""
+        try:
+            csv_files = [os.path.join(directory_path, f) for f in os.listdir(directory_path) if f.endswith('.csv')]
+            if not csv_files:
+                raise ValueError("No CSV files found in the specified directory.")
+
+            all_dfs = [self.load_crypto_dataset(csv_file) for csv_file in csv_files]
+            df = pd.concat(all_dfs, ignore_index=True)
+
+            # Remove duplicate entries based on 'Symbol', keeping the last one
+            df.drop_duplicates(subset=['Symbol'], keep='last', inplace=True)
+
             self.data = self.create_knowledge_base(df)
             
-            # Extract texts and create embeddings
             texts = [item['text'] for item in self.data]
             embeddings = self.model.encode(texts)
             
-            # Create FAISS index
             dimension = embeddings.shape[1]
-            self.index = faiss.IndexFlatIP(dimension)  # Inner product for cosine similarity
-            
-            # Normalize embeddings for cosine similarity
+            self.index = faiss.IndexFlatIP(dimension)
             faiss.normalize_L2(embeddings)
             self.index.add(embeddings.astype('float32'))
             
-            logger.info(f"Built FAISS index with {self.index.ntotal} vectors")
-        
+            logger.info(f"Built FAISS index with {self.index.ntotal} vectors from {len(csv_files)} files.")
+
         except Exception as e:
-            logger.error(f"Error building index: {e}")
+            logger.error(f"Error building index from directory: {e}")
             raise
-    
+
     def save_index(self, index_path: str, data_path: str):
         """Save FAISS index and data"""
         try:
@@ -239,7 +243,7 @@ class CryptoRAGChatbot:
         except Exception as e:
             logger.error(f"Error saving index: {e}")
             raise
-    
+
     def load_index(self):
         """Load FAISS index and data"""
         try:
@@ -260,7 +264,7 @@ class CryptoRAGChatbot:
         except Exception as e:
             logger.error(f"Error loading index: {e}")
             raise
-    
+
     def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """Search for relevant information"""
         try:
@@ -287,7 +291,7 @@ class CryptoRAGChatbot:
         except Exception as e:
             logger.error(f"Search error: {e}")
             raise
-    
+
     def generate_response(self, query: str, context_limit: int = 3) -> Dict:
         """Generate response using RAG"""
         try:
@@ -333,7 +337,7 @@ class CryptoRAGChatbot:
                 'confidence': 0.0,
                 'sources': []
             }
-    
+
     def _generate_contextual_response(self, query: str, context: List[str]) -> str:
         """Generate contextual response based on query and context"""
         query_lower = query.lower()
@@ -357,7 +361,7 @@ class CryptoRAGChatbot:
         # General information
         else:
             return self._generate_general_response(query, context)
-    
+
     def _generate_price_response(self, query: str, context: List[str]) -> str:
         """Generate response for price-related queries"""
         response_parts = []
@@ -370,7 +374,7 @@ class CryptoRAGChatbot:
             return " ".join(response_parts[:2])  # Limit to 2 most relevant contexts
         else:
             return "I don't have current price information for that cryptocurrency. Please check a reliable cryptocurrency exchange for the most up-to-date prices."
-    
+
     def _generate_market_cap_response(self, query: str, context: List[str]) -> str:
         """Generate response for market cap queries"""
         response_parts = []
@@ -383,7 +387,7 @@ class CryptoRAGChatbot:
             return " ".join(response_parts[:2])
         else:
             return "I don't have market capitalization information for that cryptocurrency."
-    
+
     def _generate_volume_response(self, query: str, context: List[str]) -> str:
         """Generate response for volume queries"""
         response_parts = []
@@ -396,7 +400,7 @@ class CryptoRAGChatbot:
             return " ".join(response_parts[:2])
         else:
             return "I don't have trading volume information for that cryptocurrency."
-    
+
     def _generate_change_response(self, query: str, context: List[str]) -> str:
         """Generate response for price change queries"""
         response_parts = []
@@ -409,14 +413,14 @@ class CryptoRAGChatbot:
             return " ".join(response_parts[:2])
         else:
             return "I don't have recent price change information for that cryptocurrency."
-    
+
     def _generate_general_response(self, query: str, context: List[str]) -> str:
         """Generate general response"""
         if context:
             return f"Based on the available information: {context[0]}"
         else:
             return "I don't have specific information about that. Could you please ask about a specific cryptocurrency or rephrase your question?"
-    
+
     def get_supported_cryptocurrencies(self) -> List[str]:
         """Get list of supported cryptocurrencies"""
         if not self.data:
@@ -430,7 +434,7 @@ class CryptoRAGChatbot:
                 symbols.add(symbol)
         
         return sorted(list(symbols))
-    
+
     def get_model_info(self) -> Dict:
         """Get model information"""
         return {
