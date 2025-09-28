@@ -896,3 +896,53 @@
 2025-09-29 00:35:10,796 - __main__ - INFO - Final metrics: {'train_mse': np.float32(0.0076945657), 'test_mse': np.float32(0.39829522), 'train_mae': np.float32(0.06257944), 'test_mae': np.float32(0.47978258), 'final_train_loss': 0.00400512432679534, 'final_test_loss': 0.13788320124149323}
 2025-09-29 00:35:10,796 - __main__ - INFO - Successfully trained LSTM for XRP
 2025-09-29 00:35:10,796 - __main__ - INFO - LSTM training completed: 23/23 successful
+2025-09-29 00:40:46,040 - __main__ - INFO - Initializing sentiment analysis model
+2025-09-29 00:40:46,041 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:40:49,127 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:40:49,436 - __main__ - INFO - Sentiment analysis model initialized successfully
+2025-09-29 00:41:54,031 - __main__ - INFO - Initializing sentiment analysis model
+2025-09-29 00:41:54,032 - ml.sentiment_model - INFO - Loading FinBERT model: ProsusAI/finbert
+2025-09-29 00:41:57,387 - ml.sentiment_model - INFO - FinBERT model loaded successfully
+2025-09-29 00:41:57,648 - __main__ - INFO - Sentiment analysis model initialized successfully
+2025-09-29 00:42:40,277 - __main__ - INFO - Initializing RAG chatbot model
+2025-09-29 00:42:40,281 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:42:40,281 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:42:47,790 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:42:47,813 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:42:48,443 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:44:36,658 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 00:44:36,666 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:44:36,689 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:44:37,345 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:46:28,778 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 00:46:29,222 - ml.rag_nlp - INFO - Index saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_index.index
+2025-09-29 00:46:29,224 - ml.rag_nlp - INFO - Data saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_data.json
+2025-09-29 00:46:29,274 - __main__ - INFO - RAG chatbot model initialized successfully
+2025-09-29 00:48:48,695 - __main__ - INFO - Initializing RAG chatbot model
+2025-09-29 00:48:48,699 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:48:48,700 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:48:55,697 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:48:55,720 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:48:56,144 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:50:42,699 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 00:50:42,708 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:50:42,730 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:50:43,364 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:52:33,214 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 00:52:33,662 - ml.rag_nlp - INFO - Index saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_index.index
+2025-09-29 00:52:33,663 - ml.rag_nlp - INFO - Data saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_data.json
+2025-09-29 00:52:33,688 - __main__ - INFO - RAG chatbot model initialized successfully
+2025-09-29 00:56:17,467 - __main__ - INFO - Initializing RAG chatbot model
+2025-09-29 00:56:17,471 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-09-29 00:56:17,471 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-09-29 00:56:24,955 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:56:24,971 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:56:25,427 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:58:12,213 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 00:58:12,222 - ml.rag_nlp - INFO - Loaded dataset with 395 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2021.csv
+2025-09-29 00:58:12,245 - ml.rag_nlp - INFO - Loaded dataset with 3052 records from C:\Users\R.K Singh\Desktop\coinsense\datasets\crypto_datasets\Cryptocurrency_Dataset_2023.csv
+2025-09-29 00:58:12,882 - ml.rag_nlp - INFO - Created knowledge base with 12404 entries
+2025-09-29 00:59:59,937 - ml.rag_nlp - INFO - Built FAISS index with 12404 vectors from 2 files.
+2025-09-29 01:00:00,331 - ml.rag_nlp - INFO - Index saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_index.index
+2025-09-29 01:00:00,332 - ml.rag_nlp - INFO - Data saved to C:\Users\R.K Singh\Desktop\coinsense\backend\trained_models\rag_data.json
+2025-09-29 01:00:00,367 - __main__ - INFO - RAG chatbot model initialized successfully

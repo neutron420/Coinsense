@@ -218,6 +218,7 @@ class ModelEvaluator:
             
             chatbot = CryptoRAGChatbot(index_path=index_path, data_path=data_path)
             
+            
             # Default test queries
             if test_queries is None:
                 test_queries = [

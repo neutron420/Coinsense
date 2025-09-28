@@ -247,26 +247,28 @@ class CryptoRAGChatbot:
             logger.error(f"Error saving index: {e}")
             raise
 
-    def load_index(self):
-        """Load FAISS index and data"""
-        try:
-            if not self.index_path or not os.path.exists(self.index_path):
-                raise ValueError("Index path not provided or file doesn't exist")
-            
-            # Load FAISS index
+    # Replace the existing load_index function in app/ml/rag_nlp.py with this one
+def load_index(self):
+    """Loads the FAISS index and RAG data from disk."""
+    try:
+        if os.path.exists(self.index_path) and os.path.exists(self.data_path):
+            # --- THIS IS THE FIX ---
+            # Ensure the index and data are assigned to self.
             self.index = faiss.read_index(self.index_path)
-            
-            # Load data
-            data_file = self.index_path.replace('.index', '_data.json')
-            if os.path.exists(data_file):
-                with open(data_file, 'r', encoding='utf-8') as f:
-                    self.data = json.load(f)
-            
+            with open(self.data_path, 'r') as f:
+                self.rag_data = json.load(f)
+            # ---------------------
+
             logger.info(f"Loaded index with {self.index.ntotal} vectors")
-        
-        except Exception as e:
-            logger.error(f"Error loading index: {e}")
-            raise
+            return True
+        else:
+            logger.warning("Index or data file not found, skipping load.")
+            return False
+    except Exception as e:
+        logger.error(f"Error loading FAISS index or data: {e}", exc_info=True)
+        self.index = None
+        self.rag_data = []
+        return False
 
     def search(self, query: str, top_k: int = 5) -> List[Dict]:
         """Search for relevant information"""
