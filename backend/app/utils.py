@@ -16,7 +16,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 # Password hashing context
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Use pbkdf2_sha256 as default (pure-python; works everywhere), keep bcrypt for compatibility
+pwd_context = CryptContext(schemes=["pbkdf2_sha256", "bcrypt"], deprecated="auto")
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against its hash"""
