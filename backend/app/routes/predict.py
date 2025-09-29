@@ -13,6 +13,7 @@ from models import User, Prediction
 from auth import get_current_user
 from ml.lstm_model import get_predictor, load_crypto_data
 from utils import validate_crypto_symbol, normalize_crypto_symbol, format_currency, calculate_confidence_level
+import os
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -76,6 +77,39 @@ async def predict_price(
         
         # Get predictor instance
         predictor = get_predictor()
+
+        # Ensure a model is loaded for this symbol if available
+        try:
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+            trained_dir = os.path.join(project_root, 'trained_models')
+            coin_key = symbol.lower()
+            model_file = f"lstm_{coin_key}_model.pth"
+            scaler_file = f"lstm_{coin_key}_scaler.pkl"
+            model_path = os.path.join(trained_dir, model_file)
+            scaler_path = os.path.join(trained_dir, scaler_file)
+
+            if os.path.exists(model_path) and os.path.exists(scaler_path):
+                predictor.load_model(model_path)
+                predictor.load_scaler(scaler_path)
+            else:
+                # If specific model not found, try a generic bitcoin model as fallback
+                btc_model = os.path.join(trained_dir, 'lstm_bitcoin_model.pth')
+                btc_scaler = os.path.join(trained_dir, 'lstm_bitcoin_scaler.pkl')
+                if os.path.exists(btc_model) and os.path.exists(btc_scaler):
+                    predictor.load_model(btc_model)
+                    predictor.load_scaler(btc_scaler)
+                else:
+                    raise HTTPException(
+                        status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                        detail="No trained model available. Please train a model first."
+                    )
+        except HTTPException:
+            raise
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Model load failed: {str(e)}"
+            )
         
         # Load cryptocurrency data
         try:
