@@ -1,6 +1,8 @@
 """
 FastAPI main application for Crypto AI Chatbot
 """
+from fastapi import FastAPI
+from dotenv import load_dotenv 
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials

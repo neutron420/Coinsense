@@ -5,6 +5,10 @@ import os
 from typing import List
 from pydantic_settings import BaseSettings
 from pydantic import validator
+from dotenv import load_dotenv
+
+# This is the crucial fix: Load the .env file BEFORE the class is defined.
+load_dotenv()
 
 class Settings(BaseSettings):
     """Application settings"""
@@ -27,6 +31,7 @@ class Settings(BaseSettings):
     news_api_key: str = "your-newsapi-key"
     coinmarketcap_api_key: str = "your-coinmarketcap-api-key"
     huggingface_api_key: str = "your-huggingface-api-key"
+    openrouter_api_key: str = "your-openrouter-api-key"
     
     # Model Configuration
     lstm_model_path: str = "./models/lstm_model.pth"
