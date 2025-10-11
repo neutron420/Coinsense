@@ -30,8 +30,9 @@ export default function ProfilePage() {
           throw new Error(data.detail || "Failed to load profile");
         }
         setUser(data);
-      } catch (err: any) {
-        setError(err.message || "Something went wrong");
+      } catch (err: Error | unknown) {
+        const error = err instanceof Error ? err.message : "Something went wrong";
+        setError(error);
       } finally {
         setLoading(false);
       }

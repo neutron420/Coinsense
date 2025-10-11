@@ -1,12 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
 
+interface SentimentResult {
+  label: string;
+  score: number;
+  confidence: number;
+  analysis_date: string;
+}
+
+interface MarketSentiment {
+  overall_sentiment: string;
+  confidence: number;
+  positive_count: number;
+  negative_count: number;
+  neutral_count: number;
+}
+
 export default function SentimentPage() {
   const [text, setText] = useState("");
   const [query, setQuery] = useState("cryptocurrency");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
-  const [market, setMarket] = useState<any>(null);
+  const [result, setResult] = useState<SentimentResult | null>(null);
+  const [market, setMarket] = useState<MarketSentiment | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -28,8 +43,8 @@ export default function SentimentPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || "Analysis failed");
       setResult(data);
-    } catch (e: any) {
-      setError(e.message || "Something went wrong");
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -49,8 +64,8 @@ export default function SentimentPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || "Market analysis failed");
       setMarket(data);
-    } catch (e: any) {
-      setError(e.message || "Something went wrong");
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
