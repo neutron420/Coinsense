@@ -26,8 +26,8 @@ export default function RegisterPage() {
         throw new Error(data.detail || "Registration failed");
       }
       setSuccess("Account created. You can now sign in.");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }

@@ -13,7 +13,7 @@ export default function DashboardPage() {
     }
   }, []);
 
-  return (
+  return signedIn ? (
     <div className="min-h-screen px-6 py-10">
       <div className="mx-auto w-full max-w-6xl">
         <div className="flex items-center gap-3 mb-4">
@@ -51,7 +51,7 @@ export default function DashboardPage() {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 }
 
 

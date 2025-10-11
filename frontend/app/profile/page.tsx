@@ -56,7 +56,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-6">
         <div className="max-w-md w-full text-center">
-          <h1 className="text-xl font-semibold">Couldn't load profile</h1>
+          <h1 className="text-xl font-semibold">Could not load profile</h1>
           <p className="text-sm text-black/70 dark:text-white/70 mt-2">{error}</p>
           <div className="mt-6 flex items-center justify-center gap-3">
             <Link href="/login" className="rounded-full bg-foreground text-background px-5 h-10 inline-flex items-center">Sign in</Link>

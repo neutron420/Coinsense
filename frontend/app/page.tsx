@@ -1,13 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Bot, MessageSquare, TrendingUp, Zap, BarChart3, Shield, Database, Brain, Target } from "lucide-react";
+import {  MessageSquare, TrendingUp, Zap, BarChart3, Shield, Brain, Target } from "lucide-react";
 
 export default function Home() {
   const [signedIn, setSignedIn] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     // Simulating auth check - in real app, check your auth token
     const token = false; // Replace with: localStorage.getItem("coinsense_token");
     setSignedIn(!!token);

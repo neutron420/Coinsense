@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, TrendingUp, Calendar, MessageSquare, BarChart3, ShoppingCart, FileText, User } from "lucide-react";
+import { Menu, X, TrendingUp, Calendar, MessageSquare, BarChart3, ShoppingCart, FileText, User, LucideIcon } from "lucide-react";
 
 // Defines the structure for a chat message
 type ChatMsg = {
@@ -65,7 +65,7 @@ function TypingIndicator() {
 }
 
 // Reusable button for quick prompts
-function QuickPromptButton({ icon: Icon, text, onClick }: { icon: any; text: string; onClick: () => void }) {
+function QuickPromptButton({ icon: Icon, text, onClick }: { icon: LucideIcon; text: string; onClick: () => void }) {
   return (
     <button
       onClick={onClick}

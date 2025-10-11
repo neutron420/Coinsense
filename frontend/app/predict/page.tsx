@@ -41,8 +41,8 @@ export default function PredictPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || "Prediction failed");
       setPred(data);
-    } catch (e: any) {
-      setError(e.message || "Something went wrong");
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Something went wrong");
     } finally {
       setLoading(false);
     }

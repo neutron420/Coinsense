@@ -24,8 +24,8 @@ export default function LoginPage() {
       }
       localStorage.setItem("coinsense_token", data.access_token);
       window.location.href = "/";
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
