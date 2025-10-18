@@ -8,7 +8,7 @@ torchaudio>=0.9.0
 
 # Transformers and NLP
 transformers>=4.20.0
-sentence-transformers>=2.2.0
+sentence-transformers==2.7.0
 tokenizers>=0.12.0
 
 # Vector search and embeddings
