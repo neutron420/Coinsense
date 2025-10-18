@@ -1,4 +1,4 @@
-FROM python:3.9.18-slim-bookworm as builder
+FROM python:3.12-slim-bookworm as builder
 
 WORKDIR /app
 
@@ -15,15 +15,15 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-FROM python:3.9.18-slim-bookworm
+FROM python:3.12-slim-bookworm
 
 WORKDIR /app
 
 COPY --from=builder /opt/venv /opt/venv
 
-COPY . .
-
-RUN mkdir -p models logs data
+COPY ./app ./app
+COPY ./trained_models ./models
+RUN mkdir -p logs data
 
 RUN addgroup --system app && adduser --system --group app
 RUN chown -R app:app /app

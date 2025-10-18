@@ -4,7 +4,7 @@ Price prediction routes for the Crypto AI Chatbot
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional  # <--- 1. ADDED 'List' HERE
 from datetime import datetime
 import logging
 
@@ -23,10 +23,11 @@ class PredictionRequest(BaseModel):
     symbol: str
     days_ahead: int = 1
 
+# 2. THIS MODEL IS CHANGED FOR THE GRAPH
 class PredictionResponse(BaseModel):
     symbol: str
     current_price: float
-    predicted_price: float
+    predicted_prices: List[float]  
     confidence: float
     confidence_level: str
     prediction_date: str
@@ -131,10 +132,10 @@ async def predict_price(
         
         # Extract prediction data
         current_price = prediction_result['current_price']
-        predicted_price = prediction_result['predictions'][0]  # First day prediction
+        predicted_price = prediction_result['predictions'][0]  # First day prediction (for DB)
         confidence = prediction_result['confidence']
         
-        # Save prediction to database
+        # Save prediction to database (This part is unchanged, saves the first day prediction)
         prediction_record = Prediction(
             user_id=current_user.id,
             cryptocurrency=symbol,
@@ -147,10 +148,11 @@ async def predict_price(
         db.commit()
         db.refresh(prediction_record)
         
+        # 3. THIS RETURN STATEMENT IS CHANGED FOR THE GRAPH
         return PredictionResponse(
             symbol=symbol,
             current_price=current_price,
-            predicted_price=predicted_price,
+            predicted_prices=prediction_result['predictions'], # <-- Pass the full list
             confidence=confidence,
             confidence_level=calculate_confidence_level(confidence),
             prediction_date=prediction_result['prediction_date'],

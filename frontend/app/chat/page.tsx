@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, TrendingUp, Calendar, MessageSquare, BarChart3, ShoppingCart, FileText, User, LucideIcon } from "lucide-react";
+import { TrendingUp, Calendar, MessageSquare, User, Sparkles, Plus, Menu, X, ArrowUp } from "lucide-react"; // Added ArrowUp
+import Link from "next/link";
 
 // Defines the structure for a chat message
 type ChatMsg = {
@@ -9,70 +10,71 @@ type ChatMsg = {
   timestamp: string;
 };
 
-// --- Sub-components for a cleaner structure ---
+// --- Sub-components ---
 
-// Component for rendering a single chat message bubble
 function ChatMessage({ msg }: { msg: ChatMsg }) {
   const isUser = msg.role === "user";
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
-      <div className={`flex gap-3 max-w-[80%] ${isUser ? "flex-row-reverse" : "flex-row"}`}>
-        {/* Avatar */}
-        <div className="flex-shrink-0">
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-medium text-xs ${
-            isUser ? "bg-blue-500" : "bg-emerald-500"
-          }`}>
-            {isUser ? "U" : "AI"}
-          </div>
+    <div className="flex gap-4 mb-6"> {/* Unified gap and margin */}
+      {/* Avatar */}
+      <div className="flex-shrink-0">
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-medium text-xs ${
+          isUser ? "bg-blue-600" : "bg-emerald-600" // Slightly darker colors
+        }`}>
+          {isUser ? (
+            <User className="w-4 h-4" />
+          ) : (
+            <Sparkles className="w-4 h-4" />
+          )}
         </div>
-        
-        {/* Message Bubble */}
-        <div>
-          <div className={`rounded-2xl px-4 py-2.5 ${
-            isUser 
-              ? "bg-blue-500 text-white rounded-tr-sm" 
-              : "bg-zinc-800 text-gray-100 rounded-tl-sm"
-          }`}>
-            <div className="whitespace-pre-wrap text-[15px] leading-relaxed">{msg.content}</div>
-          </div>
-          <div className={`text-[11px] text-gray-500 mt-1 px-1 ${isUser ? "text-right" : "text-left"}`}>
-            {msg.timestamp}
-          </div>
+      </div>
+      
+      {/* Message Content */}
+      <div className="flex-1">
+        <div className="font-semibold text-white mb-1.5"> {/* Increased margin */}
+          {isUser ? "You" : "AI Assistant"}
+        </div>
+        <div className="text-gray-200 text-base leading-relaxed whitespace-pre-wrap"> {/* Slightly larger text */}
+          {msg.content}
+        </div>
+        <div className="text-[11px] text-gray-500 mt-2"> {/* Increased margin */}
+          {msg.timestamp}
         </div>
       </div>
     </div>
   );
 }
 
-// Component for the "Assistant is typing..." animation
 function TypingIndicator() {
   return (
-    <div className="flex justify-start mb-4">
-      <div className="flex gap-3 max-w-[80%]">
-        <div className="flex-shrink-0">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-500 text-white font-medium text-xs">
-            AI
-          </div>
+    <div className="flex gap-4 mb-6">
+      <div className="flex-shrink-0">
+        <div className="w-8 h-8 rounded-full flex items-center justify-center bg-emerald-600 text-white font-medium text-xs">
+          <Sparkles className="w-4 h-4" />
         </div>
-        <div className="bg-zinc-800 rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-1">
-          <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce" />
-          <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce [animation-delay:0.15s]" />
-          <span className="h-2 w-2 rounded-full bg-gray-400 animate-bounce [animation-delay:0.3s]" />
+      </div>
+      <div className="flex-1">
+        <div className="font-semibold text-white mb-1.5">
+          AI Assistant
+        </div>
+        <div className="bg-zinc-800 rounded-lg px-4 py-3 flex items-center gap-1.5 w-16">
+          <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce" /> {/* Slightly smaller dots */}
+          <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce [animation-delay:0.15s]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce [animation-delay:0.3s]" />
         </div>
       </div>
     </div>
   );
 }
 
-// Reusable button for quick prompts
-function QuickPromptButton({ icon: Icon, text, onClick }: { icon: LucideIcon; text: string; onClick: () => void }) {
+function QuickPromptButton({ text, onClick }: { text: string; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="text-left px-3 py-2.5 rounded-lg bg-zinc-800/50 hover:bg-zinc-700/50 text-sm text-gray-300 transition-all border border-zinc-700/50 hover:border-zinc-600 flex items-center gap-2"
+      className="w-full text-left px-3 py-2.5 rounded-lg bg-zinc-800/60 hover:bg-zinc-700/60 text-sm text-gray-300 transition-colors flex items-center gap-2" // Added transition-colors
     >
-      <Icon className="w-4 h-4 text-gray-400" />
-      <span className="flex-1">{text}</span>
+      <MessageSquare className="w-4 h-4 text-gray-400 flex-shrink-0" />
+      <span className="flex-1 truncate">{text}</span>
     </button>
   );
 }
@@ -84,10 +86,17 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true); // Default to open on desktop
   const scroller = useRef<HTMLDivElement | null>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement | null>(null); // Ref for textarea
 
-  // Effect to handle authentication and fetching username
+  // Check screen size on mount for sidebar default
+  useEffect(() => {
+     if (window.innerWidth < 768) { // Example breakpoint for mobile (Tailwind's 'md')
+         setSidebarOpen(false);
+     }
+  }, []);
+
   useEffect(() => {
     const token = localStorage.getItem("coinsense_token");
     if (!token) {
@@ -102,24 +111,40 @@ export default function ChatPage() {
         if (res.ok) {
           const data = await res.json();
           setUsername(data.username || null);
+        } else {
+            // Handle unauthorized or token expiry - redirect to login
+             localStorage.removeItem("coinsense_token");
+             window.location.href = "/login";
         }
       } catch (error) {
         console.error("Failed to fetch username:", error);
+         localStorage.removeItem("coinsense_token"); // Also logout on fetch error
+         window.location.href = "/login";
       }
     })();
   }, []);
 
-  // Effect to auto-scroll to the latest message
   useEffect(() => {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
-  // Main function to handle sending a message
+  // Auto-resize textarea height
+  useEffect(() => {
+    if (textAreaRef.current) {
+      textAreaRef.current.style.height = 'auto'; // Reset height
+      textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`; // Set to scroll height
+    }
+  }, [input]);
+
   async function send() {
     const text = input.trim();
     if (!text || loading) return;
 
     const token = localStorage.getItem("coinsense_token");
+    if (!token) { // Double check token before sending
+        window.location.href = "/login";
+        return;
+    }
     const timestamp = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
     setMessages((m) => [...m, { role: "user", content: text, timestamp }]);
@@ -132,33 +157,57 @@ export default function ChatPage() {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ message: text }),
       });
+
+      if (res.status === 401) { // Handle expired token from API
+          localStorage.removeItem("coinsense_token");
+          window.location.href = "/login";
+          throw new Error("Unauthorized");
+      }
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || "Chat failed");
 
       const reply = data.response || "";
       const assistantTimestamp = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       
-      // Add a placeholder for the assistant's message
       setMessages((m) => [...m, { role: "assistant", content: "", timestamp: assistantTimestamp }]);
 
-      // Typewriter effect (word by word)
+      // Typewriter effect
       const words = reply.split(" ");
       for (let i = 0; i < words.length; i++) {
-        await new Promise((r) => setTimeout(r, 60));
+        await new Promise((r) => setTimeout(r, 40)); // Typing speed
         setMessages((currentMessages) => {
+          // Prevent updates if component unmounted or state changed rapidly
+          if (!currentMessages || currentMessages.length === 0) return []; 
           const newMessages = [...currentMessages];
           const lastMessage = newMessages[newMessages.length - 1];
-          newMessages[newMessages.length - 1] = {
-            ...lastMessage,
-            content: words.slice(0, i + 1).join(" "),
-          };
+          // Ensure we are updating the correct assistant message placeholder
+          if (lastMessage && lastMessage.role === 'assistant' && lastMessage.timestamp === assistantTimestamp) { 
+            newMessages[newMessages.length - 1] = {
+              ...lastMessage,
+              content: words.slice(0, i + 1).join(" "),
+            };
+          }
           return newMessages;
         });
       }
-    } catch (error) {
+    } catch (error: any) {
+       if (error.message === "Unauthorized") return; // Already handled redirect
+
       console.error("API Error:", error);
       const errorTimestamp = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-      setMessages((m) => [...m, { role: "assistant", content: "Sorry, something went wrong.", timestamp: errorTimestamp }]);
+      // Replace the placeholder if error occurs during typing
+      setMessages((m) => {
+          // Prevent updates if component unmounted or state changed rapidly
+          if (!m || m.length === 0) return []; 
+          const last = m[m.length - 1];
+          // Ensure we replace the correct placeholder
+          if (last && last.role === 'assistant' && last.content === '' && last.timestamp === assistantTimestamp) {
+              return [...m.slice(0, -1), { role: "assistant", content: "Sorry, something went wrong.", timestamp: errorTimestamp }];
+          }
+          // If placeholder wasn't found (e.g., user navigated away), add error as new message
+          return [...m, { role: "assistant", content: "Sorry, something went wrong.", timestamp: errorTimestamp }];
+      });
     } finally {
       setLoading(false);
     }
@@ -171,145 +220,133 @@ export default function ChatPage() {
     }
   }
 
+  const handleNewChat = () => {
+    setMessages([]);
+    setInput("");
+     if (window.innerWidth < 768) { // Close sidebar on mobile after new chat
+         setSidebarOpen(false);
+     }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-gray-100 flex">
-      {/* Sidebar - Left Side */}
-      <aside className={`${sidebarOpen ? "w-64" : "w-0"} flex-shrink-0 transition-all duration-300 border-r border-zinc-800/50 bg-zinc-950 flex flex-col overflow-hidden`}>
-        <div className="flex-1 overflow-y-auto">
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-sm font-semibold text-gray-300">Suggested Questions</h3>
-              <button
-                onClick={() => setSidebarOpen(false)}
-                className="p-1 hover:bg-zinc-800 rounded transition-colors"
-              >
-                <X className="w-4 h-4 text-gray-400" />
-              </button>
-            </div>
-            
-            <div className="space-y-2">
-              <QuickPromptButton 
-                icon={TrendingUp}
-                text="BTC outlook this week?" 
-                onClick={() => setInput("What is the outlook for BTC this week?")} 
-              />
-              <QuickPromptButton 
-                icon={Calendar}
-                text="ETH 3-day prediction" 
-                onClick={() => setInput("Show ETH prediction for 3 days")} 
-              />
-              <QuickPromptButton 
-                icon={MessageSquare}
-                text="Solana sentiment today" 
-                onClick={() => setInput("Sentiment for Solana today")} 
-              />
-              <QuickPromptButton 
-                icon={BarChart3}
-                text="BTC vs ETH volatility" 
-                onClick={() => setInput("Compare BTC vs ETH volatility")} 
-              />
-              <QuickPromptButton 
-                icon={ShoppingCart}
-                text="Best crypto to buy now?" 
-                onClick={() => setInput("Best crypto to buy now?")} 
-              />
-              <QuickPromptButton 
-                icon={FileText}
-                text="Market analysis summary" 
-                onClick={() => setInput("Market analysis summary")} 
-              />
-            </div>
-            
-            <div className="mt-6 p-3 rounded-lg bg-zinc-900/50 border border-zinc-800">
-              <div className="flex items-start gap-2">
-                <div className="text-yellow-500 text-sm">💡</div>
-                <div>
-                  <h4 className="text-xs font-medium mb-1 text-gray-300">Pro Tip</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">
-                    Ask specific questions about price predictions, market sentiment, or technical analysis for better insights.
-                  </p>
-                </div>
-              </div>
-            </div>
+    // Root container ensures full height and prevents scrolling on body
+    <div className="flex h-screen max-h-screen overflow-hidden bg-black text-gray-100">
+
+      {/* Sidebar */}
+      <aside className={`${sidebarOpen ? "w-64 md:w-72" : "w-0"} flex-shrink-0 transition-width duration-300 bg-zinc-900 border-r border-zinc-700/50 flex flex-col`}>
+        {/* Added flex-shrink-0 to prevent shrinking sections */}
+        <div className="p-4 flex-shrink-0 border-b border-zinc-700/50"> 
+          <button
+            onClick={handleNewChat}
+            className="w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition-colors"
+          >
+            <span>New Chat</span>
+            <Plus className="w-5 h-5" />
+          </button>
+        </div>
+        
+        {/* Suggestions list scrolls */}
+        <div className="flex-1 overflow-y-auto px-4 pt-4 pb-4"> 
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Suggestions</h3>
+          <div className="space-y-2">
+            <QuickPromptButton 
+              text="BTC outlook this week?" 
+              onClick={() => { setInput("What is the outlook for BTC this week?"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
+            <QuickPromptButton 
+              text="ETH 3-day prediction" 
+              onClick={() => { setInput("Show ETH prediction for 3 days"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
+            <QuickPromptButton 
+              text="Solana sentiment today" 
+              onClick={() => { setInput("Sentiment for Solana today"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
+             <QuickPromptButton 
+              text="Compare BTC vs ETH" 
+              onClick={() => { setInput("Compare BTC vs ETH volatility"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
+             {/* Add more suggestions if needed */}
+             <QuickPromptButton 
+              text="What is DeFi?" 
+              onClick={() => { setInput("What is DeFi?"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
+            <QuickPromptButton 
+              text="Explain NFTs" 
+              onClick={() => { setInput("Explain NFTs simply"); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+            />
           </div>
         </div>
         
-        {/* Profile Section at Bottom */}
-        <div className="border-t border-zinc-800/50 p-4">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-zinc-800/50 transition-colors">
-            <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-medium">
+        {/* Profile section at bottom */}
+        <div className="border-t border-zinc-700/50 p-4 flex-shrink-0"> 
+          <Link href="/profile" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-zinc-800 transition-colors"> 
+            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-medium flex-shrink-0">
               {username ? username[0].toUpperCase() : "U"}
             </div>
-            <div className="flex-1 text-left">
-              <div className="text-sm font-medium text-gray-200">{username || "User"}</div>
-              <div className="text-xs text-gray-500">View Profile</div>
+            <div className="flex-1 text-left overflow-hidden">
+              <div className="text-sm font-medium text-gray-200 truncate">{username || "User"}</div>
             </div>
-            <User className="w-4 h-4 text-gray-400" />
-          </button>
+            <User className="w-4 h-4 text-gray-400 flex-shrink-0" />
+          </Link>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        {/* Navbar - Replace this comment with your imported Navbar component */}
-        {/* <Navbar /> */}
+      {/* Main Content Area */}
+      {/* Takes remaining space, column layout, prevents overflow */}
+      <main className="flex-1 flex flex-col h-full max-h-screen overflow-hidden"> 
         
-        <div className="border-b border-zinc-800/50">
-          <div className="px-4 sm:px-6 py-4 flex items-center justify-between">
+        {/* Header Bar */}
+        {/* No shrinking */}
+        <header className="border-b border-zinc-800/50 flex-shrink-0 bg-black z-10"> 
+          <div className="px-4 sm:px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              {!sidebarOpen && (
-                <button
-                  onClick={() => setSidebarOpen(true)}
-                  className="p-2 hover:bg-zinc-800 rounded-lg transition-colors"
-                >
-                  <Menu className="w-5 h-5 text-gray-400" />
-                </button>
-              )}
               <button
-                onClick={() => history.back()}
-                className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors"
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="p-2 hover:bg-zinc-800 rounded-lg transition-colors text-gray-400 hover:text-gray-100"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                <span className="text-sm font-medium">Back</span>
+                {/* Icon changes based on sidebar state */}
+                {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />} 
               </button>
+              <h1 className="text-base font-semibold text-gray-100">Crypto AI Assistant</h1>
             </div>
             
-            <div className="text-center">
-              <h1 className="text-lg font-semibold">Crypto AI Assistant</h1>
-              {username && <div className="text-xs text-gray-500 mt-0.5">@{username}</div>}
-            </div>
-            
-            <div className="w-32"></div>
+            <Link href="/profile" className="flex items-center gap-2 px-2 py-1 rounded-full hover:bg-zinc-800 transition-colors">
+              <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-medium">
+                {username ? username[0].toUpperCase() : "U"}
+              </div>
+            </Link>
           </div>
-        </div>
+        </header>
 
-        {/* Chat Area */}
-        <div ref={scroller} className="flex-1 overflow-y-auto">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+        {/* Chat Area - Scrolls */}
+        {/* Takes up available space, scrolls vertically */}
+        <div ref={scroller} className="flex-1 overflow-y-auto bg-black"> 
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
             {messages.length === 0 && (
-              <div className="text-center py-16">
-                <div className="w-16 h-16 bg-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-zinc-800">
-                  <MessageSquare className="w-8 h-8 text-emerald-500" />
+              <div className="text-center pt-10 pb-16">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg">
+                  <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-2xl font-semibold mb-3 text-gray-100">How can I help you today?</h2>
-                <p className="text-gray-500 mb-10">Ask me anything about cryptocurrencies, market trends, or trading strategies</p>
+                <h2 className="text-2xl font-semibold mb-2 text-gray-100">
+                  {username ? `Hello, ${username}!` : "How can I help you today?"}
+                </h2>
+                <p className="text-gray-400 mb-8 max-w-md mx-auto">Ask me anything about cryptocurrencies, market trends, or trading strategies</p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto"> {/* Adjusted grid for mobile */}
                   {[
-                    { Icon: TrendingUp, text: "What is the outlook for BTC this week?" },
-                    { Icon: Calendar, text: "Show ETH prediction for 3 days" },
-                    { Icon: MessageSquare, text: "Sentiment for Solana today" },
-                    { Icon: BarChart3, text: "Compare BTC vs ETH volatility" },
+                    { Icon: TrendingUp, text: "Outlook for BTC?" },
+                    { Icon: Calendar, text: "ETH 3-day forecast" },
+                    { Icon: MessageSquare, text: "SOL sentiment?" },
+                    { Icon: TrendingUp, text: "BTC vs ETH compare" },
                   ].map((item, i) => (
                     <button
                       key={i}
-                      onClick={() => setInput(item.text)}
-                      className="text-left px-4 py-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 transition-all group"
+                      // Use the shorter text directly for the input
+                      onClick={() => { setInput(item.text); if (window.innerWidth < 768) setSidebarOpen(false); }} 
+                      className="text-left p-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 transition-all group min-h-[100px] flex flex-col justify-start" // Flex column layout
                     >
-                      <item.Icon className="w-6 h-6 text-emerald-500 mb-3" />
-                      <div className="text-sm text-gray-300 group-hover:text-gray-200">{item.text}</div>
+                      <item.Icon className="w-5 h-5 text-gray-400 mb-2" />
+                      <div className="text-sm font-medium text-gray-300 group-hover:text-gray-200 mt-auto">{item.text}</div> {/* Pushed text down */}
                     </button>
                   ))}
                 </div>
@@ -322,37 +359,35 @@ export default function ChatPage() {
         </div>
 
         {/* Input Area - Fixed at bottom */}
-        <div className="border-t border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-            <div className="relative">
-              <div className="flex items-end gap-2 bg-zinc-900 rounded-2xl border border-zinc-800 focus-within:border-zinc-700 transition-colors">
-                <textarea
-                  className="flex-1 bg-transparent px-5 py-4 text-[15px] text-gray-100 placeholder-gray-500 resize-none focus:outline-none"
-                  placeholder="Ask anything about crypto..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={onKeyDown}
-                  disabled={loading}
-                  rows={1}
-                  style={{ maxHeight: "200px" }}
-                />
-                <button
-                  onClick={send}
-                  disabled={loading || !input.trim()}
-                  className="flex-shrink-0 w-10 h-10 mb-2 mr-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 disabled:bg-zinc-800 disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </button>
-              </div>
+        {/* No shrinking, background added */}
+        <div className="bg-black border-t border-zinc-800/50 flex-shrink-0"> 
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3"> {/* Reduced padding */}
+            {/* Input Wrapper */}
+            <div className="relative flex items-end p-1 bg-zinc-800/70 border border-zinc-700 rounded-2xl focus-within:ring-2 focus-within:ring-emerald-500/50 focus-within:border-emerald-500/50 transition-all"> 
+              <textarea
+                ref={textAreaRef} // Add ref here
+                className="flex-1 bg-transparent px-4 py-2.5 text-base text-gray-100 placeholder-gray-500 resize-none focus:outline-none overflow-y-auto" // Adjusted padding/size, added overflow-y-auto
+                placeholder="Ask anything..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)} // <<< --- *** CORRECTED HANDLER ***
+                onKeyDown={onKeyDown}
+                disabled={loading}
+                rows={1} // Start with 1 row
+                style={{ maxHeight: "120px" }} // Limit max height
+              />
+              <button
+                onClick={send}
+                disabled={loading || !input.trim()}
+                className="ml-2 flex-shrink-0 w-9 h-9 mb-1 rounded-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors" // Adjusted colors/disabled style
+              >
+                {/* Changed send icon to ArrowUp */}
+                <ArrowUp className="w-5 h-5" /> 
+              </button>
             </div>
-            <p className="text-[11px] text-gray-600 mt-2 text-center">
-              AI-powered insights • Always verify important information
-            </p>
+             {/* Removed the small text below input */}
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
