@@ -60,7 +60,7 @@ app.include_router(sentiment.router, prefix="/api/sentiment", tags=["Sentiment"]
 async def root():
     """Root endpoint"""
     return {
-        "message": "🚀 Crypto AI Chatbot API",
+        "message": " Crypto AI Chatbot API",
         "version": "1.0.0",
         "status": "active",
         "endpoints": {
